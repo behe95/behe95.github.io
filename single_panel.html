@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>single panel</title>
+    <!--=== ALL CSS Here ===-->
+    <!--=== Bootstrap ===-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"> 
+    <!--=== Fontawesome icon ===-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+	<!--=== Google Font ===-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!--=== Custom CSS ===-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+<!-- SINGLE PANEL AREA STEP 1 START -->
+<section class="single_panel_area page_1">
+    <div class="container">
+     	<div class="row">
+			<div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+				<div class="single_panel_left bg_color page_1" id="step_1_left_content">
+						<div class="row">
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+								<div class="top_left_btn">
+									<div class="btn-group">
+										<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Single panel
+										</button>
+										<div class="dropdown-menu drop_down_menu">
+										<a href="single_panel.html" class="dropdown-item" type="button" >single panel</a>
+										<a href="multi_panel.html" class="dropdown-item" type="button" >multi panel</a>
+										<a href="split_panel.html" class="dropdown-item" type="button">split panel</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+								<div class="top_right_icon text-right">
+									<ul>
+										<li><img src="assets/image/icon/expand.png" alt="Expand image"></li>
+										<li><img src="assets/image/icon/rotate.png" alt="rotate img"></li>
+										<li>
+											<div class='switchboxCont'>
+												<input class='switch default' id='first' type='checkbox'>
+												<label for='first'></label>
+											</div>
+										</li>
+										<li>3d</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					<div class="view_image_area"></div>
+				</div>
+			</div>
+			<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+				<div class="single_panel_right bg_color">
+					<div class="right_full_content">
+						<!-- Step progress-bar area start -->
+						<div id="checkout-progress" data-current-step="1">
+							<div class="progress-bar">
+								<ul>
+									<li>
+										<div class="step step-1 active">
+											<span> 1</span>
+										</div>
+									</li>
+									<li>                              
+										<div class="step step-2">
+											<span> 2</span>
+										</div>
+									</li>
+									<li>
+										<div class="step step-3">
+											<span> 3</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- Step progress-bar area end -->
+						<div class="right_top_section" id="step_1_right_content">
+							<!-- Step contol button area start -->
+							<div class="step_control_btn">
+								<ul>
+									<li><a href="#" class="prev_cn_btn"><i class="fas fa-angle-left prev_cn_icon"></i> previous</a> </li>
+									<li><a href="#" class="photo_select">Select photo</a></li>
+									<li><a href="#" class="nxt_cntl_btn nx_step_1">next <i class="fas fa-angle-right nxt_cn_icon"></i></a></li>
+								</ul>
+							</div>
+							<!-- Step contol button area start -->
+							<!-- Canves area start -->
+							<div class="canves_area">
+								<div class="row">
+									<div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+										<div class="canves_name canves_ctn">
+											<p>Canves name</p>
+										</div>
+									</div>
+									<div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 px-1">
+										<div class="my_canves canves_ctn">
+											<p>My beautiful canves</p>
+										</div>
+									</div>
+									<div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12">
+										<div class="edit_canves canves_ctn">
+											<p><a href="#"><i class="fas fa-pen"></i></a></p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Canves area end -->
+							<!-- Photo upload area start -->
+							<div class="photo_upload_area">
+								<div class="area_titel">
+									<h3>Uploads your photos</h3>
+								</div>
+								<div class="photo_upload_box">
+									<div class="upload_btn_box">
+										<a href="#" class="upload_btn"><i class="fas fa-plus"></i></a>
+									</div>
+								</div>
+								<div class="photos_upload_instraction">
+									<p class="text-right">click or drag image here</p>
+								</div>
+							</div>
+							<!-- Photo upload area end -->
+						</div>
+						<div class="right_top_section" id="step_2_right_content">
+							<!-- Step contol button area start -->
+							<div class="step_control_btn">
+								<ul>
+									<li><a href="#" class="prev_cn_btn prv_step_1"><i class="fas fa-angle-left prev_cn_icon"></i> previous</a> </li>
+									<li><a href="#" class="photo_select">Select photo</a></li>
+									<li><a href="#" class="nxt_cntl_btn nx_step_2">next <i class="fas fa-angle-right nxt_cn_icon"></i></a></li>
+								</ul>
+							</div>
+							<!-- Step contol button area start -->
+							<!-- Transform button area start -->
+							<div class="transform_btn_area text-right">
+								<a href="#" class="transform_btn">
+									<img src="assets/image/icon/free-transform.png" alt="transform">
+									<span>transform</span>
+								</a>
+							</div>
+							<!-- Transform button area end -->
+							<!-- custom size area start -->
+							<div class="custom_size">
+								<div class="canves_name cu_size_titel canves_ctn text-center">
+									<p>Custom size</p>
+								</div>
+								<div class="row">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+										<div class="canves_name canves_ctn text-center">
+											<div class="btn-group drop_down_btn">
+												<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												width
+												</button>
+												<div class="dropdown-menu drop_down_menu">
+												<button class="dropdown-item" type="button">18"</button>
+												<button class="dropdown-item" type="button">19"</button>
+												<button class="dropdown-item" type="button">20"</button>
+												<button class="dropdown-item" type="button">21"</button>
+												<button class="dropdown-item" type="button">22"</button>
+												<button class="dropdown-item" type="button">23"</button>
+												<button class="dropdown-item" type="button">24"</button>
+												<button class="dropdown-item" type="button">25"</button>
+												<button class="dropdown-item" type="button">26"</button>
+												<button class="dropdown-item" type="button">27"</button>
+												<button class="dropdown-item" type="button">28"</button>
+												<button class="dropdown-item" type="button">29"</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+										<div class="my_canves canves_ctn">
+											<div class="btn-group drop_down_btn">
+												<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												height
+												</button>
+												<div class="dropdown-menu drop_down_menu">
+													<button class="dropdown-item" type="button">18"</button>
+													<button class="dropdown-item" type="button">19"</button>
+													<button class="dropdown-item" type="button">20"</button>
+													<button class="dropdown-item" type="button">21"</button>
+													<button class="dropdown-item" type="button">22"</button>
+													<button class="dropdown-item" type="button">23"</button>
+													<button class="dropdown-item" type="button">24"</button>
+													<button class="dropdown-item" type="button">25"</button>
+													<button class="dropdown-item" type="button">26"</button>
+													<button class="dropdown-item" type="button">27"</button>
+													<button class="dropdown-item" type="button">28"</button>
+													<button class="dropdown-item" type="button">29"</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Custom size area end -->
+							<!-- Photo shape area start -->
+							<div class="photo_shape_area">
+								<div class="row">
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+									   <div class="table_titel">
+										   <p>portrait</p>
+									   </div>
+									</div>
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+										<div class="table_titel">
+											<p>square</p>
+										</div>
+									 </div>
+									 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+										<div class="table_titel">
+											<p>landscape</p>
+										</div>
+									 </div>
+								</div>
+								<div class="shape_table">
+									<table class="table table-hover">
+										<tbody>
+										  <tr>
+											<td>12" * 16"</td>
+											<td></td>
+											<td>$19.99</td>
+										  </tr>
+										  <tr>
+											<td>18" * 24"</td>
+											<td></td>
+											<td>$29.99</td>
+										  </tr>
+										  <tr>
+											<td>24" * 32"</td>
+											<td></td>
+											<td>$39.99</td>
+										  </tr>
+										  <tr>
+											<td>32" * 40"</td>
+											<td></td>
+											<td>$49.99</td>
+										  </tr>
+										  <tr>
+											<td>40" * 48"</td>
+											<td></td>
+											<td>$59.99</td>
+										  </tr>
+										  <tr>
+											<td>48" * 52"</td>
+											<td></td>
+											<td>$69.99</td>
+										  </tr>
+										  <tr>
+											<td>52" * 64"</td>
+											<td></td>
+											<td>$79.99</td>
+										  </tr>
+										  <tr>
+											<td>64" * 72"</td>
+											<td></td>
+											<td>$89.99</td>
+										  </tr>
+										  <tr>
+											<td>24" * 32"</td>
+											<td></td>
+											<td>$39.99</td>
+										  </tr>
+										  <tr>
+											<td>24" * 32"</td>
+											<td></td>
+											<td>$39.99</td>
+										  </tr>
+										  <tr>
+											<td>24" * 32"</td>
+											<td></td>
+											<td>$39.99</td>
+										  </tr>
+										</tbody>
+									  </table>
+								</div>
+							</div>
+							<!-- Photo upload area end -->
+						</div>
+						<div class="right_top_section" id="step_3_right_content">
+							<!-- Step contol button area start -->
+							<div class="step_control_btn">
+								<ul>
+									<li><a href="#" class="prev_cn_btn prv_step_2"><i class="fas fa-angle-left prev_cn_icon"></i> previous</a> </li>
+									<li><a href="#" class="photo_select">edge style</a></li>
+									<li><a href="#" class="nxt_cntl_btn nx_step_3">next <i class="fas fa-angle-right nxt_cn_icon"></i></a></li>
+								</ul>
+							</div>
+							<!-- Step contol button area start -->
+							<!-- Edge Style area start -->
+							<div class="edge_style_button_area">
+								<div class="row">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+										<div class="edge_styl_button_box text-center">
+											<div class="style_icon">
+												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
+											</div>
+											<div class="style_titel">
+												<button type="button" class="btn modal_btn">mirror</button>
+											</div>
+										</div>
+										<div class="edge_styl_button_box text-center">
+											<div class="style_icon">
+												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
+											</div>
+											<div class="style_titel">
+												<button type="button" class="btn modal_btn">photo wrap</button>
+											</div>
+										</div>
+										<div class="edge_styl_button_box text-center">
+											<div class="style_icon">
+												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
+											</div>
+											<div class="style_titel">
+												<button type="button" class="btn modal_btn">white</button>
+											</div>
+										</div>
+										<div class="edge_styl_button_box text-center">
+											<div class="style_icon">
+												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
+											</div>
+											<div class="style_titel">
+												<button type="button" class="btn modal_btn">Stretch</button>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+										<div class="edge_styl_button_box text-center">
+											<div class="style_icon">
+												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
+											</div>
+											<div class="style_titel">
+												<button type="button" class="btn modal_btn">blur</button>
+											</div>
+										</div>
+										<div class="edge_styl_button_box text-center">
+											<div class="style_icon">
+												<img class="image-fluid" src="assets/image/icon/image.png" alt="pattern">
+											</div>
+											<div class="style_titel">
+												<button type="button" class="btn modal_btn" data-toggle="modal" data-target="#exampleModalLong">pattern</button>
+												<div class="modal" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+													<div class="modal-dialog" role="document">
+													  <div class="modal-content">
+														<div class="modal-header">
+														  <h5 class="modal-title" id="exampleModalLongTitle">select pattern</h5>
+														  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														  </button>
+														</div>
+														<div class="modal-body">
+															<div class="row">
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
+																	<div class="pattern_box">
+																		<div class="patter_img">
+																			<img src="assets/image/pattern/pattern.png" alt="pattern">
+																		</div>
+																		<div class="pattern_btn">
+																			<ul>
+																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="modal-footer">
+														  <button type="button" class="btn back_btn" data-dismiss="modal"><i class="fas fa-long-arrow-alt-left"></i> Back to Edit</button>
+														  <button type="button" class="btn confirm_btn"><i class="fas fa-check"></i> Confirm changes</button>
+														</div>
+													  </div>
+													</div>
+												  </div>
+											</div>
+										</div>
+										<div class="edge_styl_button_box text-center">
+											<div class="style_icon">
+												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
+											</div>
+											<div class="style_titel">
+												<button type="button" class="btn modal_btn">black</button>
+											</div>
+										</div>
+										<div class="edge_styl_button_box text-center">
+											<div class="style_icon">
+												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
+											</div>
+											<div class="style_titel">
+												<button type="button" class="btn modal_btn">solid color</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Edge Style area end -->
+						</div>
+						<div class="right_footer_area">
+							<div class="row">
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+									<div class="footer_ctn">
+										<p class="common_txt_style">$ 26.99</p>
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+									<div class="footer_ctn">
+										<p><a href="#" type="button" class="btn modal_btn" data-toggle="modal" data-target="#check_details">check details</a></p>
+										<div class="modal fade" id="check_details" tabindex="-1" role="dialog" aria-labelledby="check_detailsTitle" aria-hidden="true">
+											<div class="modal-dialog" role="document">
+											  <div class="modal-content">
+												<div class="modal-header">
+												  <h5 class="modal-title" id="check_detailsTitle">confirm details</h5>
+												  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												  </button>
+												</div>
+												<div class="modal-body">
+												  <div class="canves-info_detail">
+													  <div class="can_titel">
+															<h6>canves name <i class="fas fa-pencil-alt"></i></h6>
+													  </div>
+													  <div class="can_details_ctn">
+														  <div class="row">
+															  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+																  <div class="info_titel">
+																	  <p>canves size</p>
+																  </div>
+															  </div>
+															  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+																	<div class="info_titel">
+																		<p>18" * 24"</p>
+																	</div>
+																</div>
+																<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+																	<div class="info_titel">
+																		<p>thickness <i class="fas fa-info-circle"></i></p>
+																	</div>
+																</div>
+																<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+																	<div class="info_titel">
+																		<p>1.5"</p>
+																	</div>
+																</div>
+																<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+																	<div class="info_titel">
+																		<p>background</p>
+																	</div>
+																</div>
+																<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+																	<div class="info_titel">
+																		<p>white</p>
+																	</div>
+																</div>
+																<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+																	<div class="info_titel">
+																		<p>edge style</p>
+																	</div>
+																</div>
+																<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+																	<div class="info_titel">
+																		<p>photo wrap</p>
+																	</div>
+																</div>
+																<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+																	<div class="info_titel">
+																		<p>free touch-ups <i class="fas fa-info-circle"></i></p>
+																	</div>
+																</div>
+																<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+																	<div class="info_titel">
+																		<div class='switchboxCont'>
+																			<input class='switch default' id='first_2' type='checkbox'>
+																			<label for='first_2'></label>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+																	<div class="info_titel">
+																		<p>email confirmation <i class="fas fa-info-circle"></i></p>
+																	</div>
+																</div>
+																<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+																	<div class="info_titel">
+																		<div class='switchboxCont'>
+																			<input class='switch default' id='first_3' type='checkbox'>
+																			<label for='first_3'></label>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+																	<div class="info_titel">
+																		<div class="optionl_txt">
+																			<input type="text" placeholder="Type instructions for our Artist... (optional)">
+																		</div>
+																	</div>
+																</div>
+														  </div>
+													  </div>
+												  </div>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn back_btn" data-dismiss="modal"><i class="fas fa-long-arrow-alt-left"></i> Back to Edit</button>
+													<button type="button" class="btn confirm_btn"><i class="fas fa-check"></i> Confirm changes</button>
+												  </div>
+											  </div>
+											</div>
+										  </div>
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+									<div class="footer_ctn footer_btn">
+										<p><a href="#" class="btn common_btn">Add to cart</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</section>
+<!-- SINGLE PANEL AREA STEP 1 END -->
+    <!--=== ALL JS Here ===-->
+    <!--=== jQuery 3.4.1 ===-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!--=== Bootstrap js ===-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!--=== Custom JS ===-->
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>
