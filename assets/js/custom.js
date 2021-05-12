@@ -21,7 +21,9 @@
         
         nextStep.addClass('active');
         progressBar.removeAttr('class').addClass('step-' + nextStepNum).data('current-step', nextStepNum);
-    });   
+    });
+    
+    
     $('.prev_cn_btn').on('click', function() {
         
         var currentStepNum = $('#checkout-progress').data('current-step');
@@ -61,5 +63,6 @@
         $('#step_2_right_content').show();
         $('#step_1_right_content,#step_3_right_content').hide();
     });
-    // STEP CONTROLL JS END
+// STEP CONTROLL JS END
+
 })(jQuery);

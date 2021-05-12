@@ -1,0 +1,396 @@
+@media (min-width: 320px) and(max-width:575px){
+    .img_size_reduce img {
+        width: 70%;
+    }
+    .single_panel_area .single_panel_left .top_left_btn .btn {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+    .single_panel_area .single_panel_left .top_left_btn ul li {
+        margin-right: 4px;
+    }
+    .img_size_reduce{
+        span{
+            display: none;
+        }
+    }
+    .switch + label {
+        width: 40px;
+        height: 20px;
+    }
+    input.switch + label::before, input.switch + label::after {
+        top: 7px;
+    }
+    .switch + label::after {
+        width: 12px;
+        height: 12px;
+    }
+    .single_panel_area .single_panel_left .top_right_icon ul li {
+        margin-right: 4px;
+    }
+    .single_panel_area .single_panel_left .top_right_icon ul li:nth-child(3){
+        margin-right: 0px;
+    }
+    .page_1 {
+        height: 430px;
+    }
+    .single_panel_area .single_panel_left .view_image_area > .block > .side {
+        height: 192px;
+        width: 175px;
+    }
+    .single_panel_area .single_panel_left .view_image_area > .block {
+        left: 6%;
+    }
+    .single_panel_area .single_panel_right #checkout-progress::before {
+        left: 21%;
+    }
+    .single_panel_area .single_panel_right #checkout-progress .progress-bar .step::after {
+        right: 8%;
+    }
+    .single_panel_area .single_panel_right .step_control_btn ul li a {
+        font-size: 12px;
+    }
+    .single_panel_area .single_panel_right .step_control_btn ul li .photo_select {
+        font-size: 12px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn p {
+        font-size: 12px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn p a {
+        font-size: 14px;
+        padding: 2px 7px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_btn .btn span{
+        display: none;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_btn .btn i{
+        display: block;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_btn{
+        text-align: center;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn p {
+        font-size: 12px;
+        line-height: 22px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal {
+        left: 0;
+        width: 320px;
+        right: 0;
+        overflow-y: auto !important;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal .modal-body .canves-info_detail {
+        padding: 30px 10px;
+        margin-top: 10px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal .modal-header .modal-title {
+        margin: 0px auto 0px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal .modal-footer button i {
+        margin-right: 6px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal .modal-footer button {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+    .single_panel_area .single_panel_right .photo_shape_area .shape_table table tbody tr td {
+        font-size: 11px;
+        padding: 7px 10px;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .modal {
+        top: -7px;
+        left: 0;
+        width: 320px;
+        right: 0;
+        overflow-y: auto !important;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .modal .modal-body .pattern_box button .pattern_btn ul li .btn {
+        padding: 2px 10px;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .modal .modal-footer button {
+        font-size: 12px;
+        padding: 8px 4px;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .modal .modal-footer button i {
+        margin-right: 6px;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .edge_styl_button_box {
+        padding: 8px 5px;
+    }
+    input#solidColor {
+        margin-bottom: 16px;
+    }
+    .single_panel_area .single_panel_right .photo_upload_area .area_titel h3 {
+        font-size: 18px;
+    }
+    .single_panel_area .single_panel_right .panel_accoridion_area #accordion .card .card-body .panel_titel p {
+        font-size: 12px;
+    }
+    .drop_down_btn .btn.common_btn {
+        font-size: 12px;
+    }
+    .single_panel_area .single_panel_right .panel_accoridion_area #accordion .card .card-header h5 button {
+        font-size: 14px;
+    }
+    .single_panel_area .single_panel_right .right_top_section {
+        padding: 0px 15px;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn .modal {
+        width: 298px;
+        right: 13px;
+    }
+    p.res_dim {
+        margin-top: 10px;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn .modal .modal-body .canves_info_edit {
+        padding: 5px 7px;
+    }
+}
+@media (min-width: 576px) and(max-width:767px){
+    .img_size_reduce{
+        span{
+            display: none;
+        }
+    }
+    .single_panel_area .single_panel_left .view_image_area > .block {
+        left: 4%;
+    }
+    .page_1 {
+        height: 570px;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .modal {
+        top: 0px;
+        left: 0%;
+        width: 570px;
+        right: 0px;
+        overflow-y: auto !important;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .modal .modal-body .pattern_box button .pattern_btn ul li .btn {
+        padding: 2px 27px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal {
+        top: -19px;
+        left: -30px;
+        width: 630px;
+        right: 0;
+        overflow-y: auto !important;
+    }
+    .single_panel_area .single_panel_right #checkout-progress .progress-bar ul li {
+        width: 26%;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn .modal {
+        top: -17px;
+        width: 550px;
+        right: 13px;
+    }
+
+}
+@media (min-width: 768px) and(max-width:991px){
+    .img_size_reduce img {
+        width: 70%;
+    }
+    .single_panel_area .single_panel_left .top_left_btn .btn {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+    .single_panel_area .single_panel_left .top_left_btn ul li {
+        margin-right: 2px;
+    }
+    .img_size_reduce{
+        span{
+            display: none;
+        }
+    }
+    .switch + label {
+        width: 40px;
+        height: 20px;
+    }
+    input.switch + label::before, input.switch + label::after {
+        top: 7px;
+    }
+    .switch + label::after {
+        width: 12px;
+        height: 12px;
+    }
+    .single_panel_area .single_panel_left .top_right_icon ul li {
+        margin-right: 1px;
+    }
+    .single_panel_area .single_panel_right #checkout-progress .progress-bar .step::after {
+        right: 11%;
+    }
+    .single_panel_area .single_panel_right .step_control_btn ul li a {
+        font-size: 12px;
+    }
+    .single_panel_area .single_panel_right .step_control_btn ul li .photo_select {
+        font-size: 16px;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn p a i {
+        padding: 4px 9px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn p a {
+        font-size: 14px;
+        padding: 6px 3px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn p {
+        font-size: 14px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_btn .btn {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal {
+        left: 52%;
+        width: 332px;
+        right: 0;
+        overflow-y: auto !important;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal .modal-content {
+        height: 680px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal .modal-footer button {
+        font-size: 13px;
+        padding: 8px 9px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal .modal-footer button i {
+        margin-right: 6px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal .modal-body .canves-info_detail {
+        margin-top: 15px;
+        padding: 30px 15px;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .modal {
+        top: -21px;
+        left: 52%;
+        width: 329px;
+        right: 0;
+        overflow-y: auto !important;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .modal .modal-body .pattern_box button .pattern_btn ul li .btn {
+        padding: 2px 13px;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .modal .modal-footer button {
+        font-size: 13px;
+        padding: 8px 8px;
+    }
+    .single_panel_area .single_panel_left .view_image_area > .block {
+        left: 3%;
+        top: 0;
+    }
+    .single_panel_area .single_panel_left .view_image_area > .block > .side.main_1 {
+        height: 100%;
+        width: 80%;
+    }
+    .single_panel_area .single_panel_left .view_image_area > .block > .side.left {
+        height: 100%;
+    }
+    .single_panel_area .single_panel_left .view_image_area {
+        width: 100%;
+        padding-top: 122%;
+        margin: 106px 0;
+        overflow: hidden;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn .modal {
+        width: 332px;
+        right: 36px;
+    }
+    p.res_dim {
+        margin-top: 10px;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn .modal .modal-body .canves_info_edit {
+        padding: 5px 12px;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn .modal .modal-body .canves_info_edit .select_photo .modal {
+        width: 330px;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn .modal .modal-body .canves_info_edit .select_photo .modal .modal-body .pattern_box button .pattern_btn ul li .btn {
+        padding: 2px 13px;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn .modal .modal-body .canves_info_edit .select_photo .modal .modal-footer button {
+        padding: 8px 7px;
+    }
+}
+@media (min-width:992px) and(max-width:1199px){
+    .img_size_reduce{
+        span{
+            display: none;
+        }
+    }
+    .single_panel_area .single_panel_left .view_image_area {
+        width: 80%;
+        padding-top: 93%;
+    }
+    .single_panel_area .single_panel_left .view_image_area > .block {
+        left: 6%;
+    }
+    .single_panel_area .single_panel_right #checkout-progress .progress-bar .step::after {
+        right: 17%;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn p a {
+        font-size: 14px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_btn .btn {
+        font-size: 14px;
+        padding: 6px 9px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn p {
+        font-size: 14px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal {
+        left: 60%;
+        width: 370px;
+        right: 0;
+        overflow-y: auto !important;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal .modal-body .canves-info_detail {
+        margin-top: 10px;
+    }
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal .modal-footer button {
+        padding: 8px 16px;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .modal {
+        left: 60%;
+        width: 370px;
+        right: 0px;
+        overflow-y: auto !important;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .modal .modal-body .pattern_box button .pattern_btn ul li .btn {
+        padding: 2px 16px;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .modal .modal-footer button {
+        padding: 8px 16px;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn p {
+        font-size: 13px;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn .modal {
+        width: 384px;
+        right: 32px;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn .modal {
+        width: 335px;
+        right: 32px;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn .modal .modal-body .canves_info_edit .select_photo input {
+        width: 100%;
+    }
+}
+@media (min-width:1200px) and(max-width:1300px){
+    .single_panel_area .single_panel_right .right_footer_area .footer_ctn .modal {
+        left: 59%;
+        width: 447px;
+        right: 0;
+        overflow-y: auto !important;
+    }
+    .single_panel_area .single_panel_right .edge_style_button_area .modal {
+        width: 445px;
+        right: 45px;
+        overflow-y: auto !important;
+    }
+    .single_panel_area .single_panel_right .canves_area .canves_ctn .modal {
+        right: 37px;
+    }
+}

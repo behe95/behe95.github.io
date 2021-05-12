@@ -13,8 +13,6 @@
 	==== INDEX PAGE CSS
 	
 	** - Default CSS
-	** - HEADER AREA CSS
-	** - MOBILE MENU AREA CSS
 */
 $content-width:10%;
 $dark-color:#05010E;
@@ -45,6 +43,9 @@ h1,h2,h3,h4,h5,h6{
 
 img{
     max-width: 100%;
+}
+img[src=""]{ 
+    display: none 
 }
 a{
 	text-decoration: none;
@@ -157,6 +158,50 @@ outline:0;
     height: 700px;
     margin-bottom: 20px;
 }
+// RANGER SLIDER CSS START
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background: rgb(24, 24, 24);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: opacity .2s;
+    transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -ms-transition: opacity .2s;
+}
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #000000;
+    border-radius: 30px;
+    cursor: pointer;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+  
+  .slider::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background: #000000;
+    border-radius: 30px;
+    cursor: pointer;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+  }
+  // RANGER SLIDER CSS END
 // DROP DOWN BUTTON CSS START
 .drop_down_btn{
     .btn.common_btn {
@@ -204,12 +249,76 @@ outline:0;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
         -ms-border-radius: 20px;
-        .view_image_area{
-            width: 350px;
-            margin: 60px auto;
-            background: #7e7b7b;
-            height: 450px;
+        position: relative;
+
+        .view_image_area {
+            position: relative;
+            width: 80%;
+            padding-top: 76%;
+            margin:55px auto;
+            overflow: hidden;
+            #patternImg{
+                width: 39px;
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                left: 54px;
+                transform: rotateY(-60deg) translateX(-100%);
+                -webkit-transform: rotateY(-60deg) translateX(-100%);
+                -moz-transform: rotateY(-60deg) translateX(-100%);
+                -ms-transform: rotateY(-60deg) translateX(-100%);
+                -o-transform: rotateY(-60deg) translateX(-100%);
+                z-index: 1;
+                visibility: hidden;
+            }
+            > .block {
+                position: absolute;
+                height: 100%;
+                width: 90%;
+                perspective: 1000px;
+                top: 8%;
+                left: 14%;
+                // overflow: hidden;
+            }
+        
+            
+            > .block > .side {
+                position: absolute;
+                top: 0;
+                left: 0;
+                // background-image: url('https://picsum.photos/id/1025/1024/768');
+                // background-size: auto 100%;
+                box-shadow: -1vw .5vw 1vw rgba(223, 219, 219, 0.3);
+                background: #7e7b7b;
+                height: 350px;
+                width: 350px;
+                background-image:url('');
+                background-size:cover;
+                background-position: center;
+                &.main_1 {  
+                    height: 80%;
+                    width: 60%;
+                    transform: rotateY(30deg);
+                    transform-origin: 0 50%;
+                    background-position: 50% 0;
+                }
+                
+                &.left {
+                    height: 80%;
+                    width: 15%;
+                    transform-origin: 0 50%;
+                    transform: rotateY(-60deg) translateX(-100%);
+                    filter: brightness(40%);
+                    background-position: 28.5% 0;
+                    -webkit-filter: brightness(40%);
+                }
+                .solid_color{
+                    background: red !important;
+                }
+            }
+         
         }
+
         .top_left_btn{
             ul{      
                 li{
@@ -256,6 +365,23 @@ outline:0;
                     &:last-child{
                         margin-right: 0;
                     }
+                    button{
+                        border: none;
+                        background: transparent;
+                    }
+                }
+            }
+        }
+        .bottom_left_ranger_slider{
+            .slider{
+                width: 60%;
+            }
+        }
+        .bottom_right_sign{
+            text-align: right;
+            a{
+                i{
+                    color: #000;
                 }
             }
         }
@@ -588,37 +714,44 @@ outline:0;
                                             -moz-border-radius: 14px;
                                             -ms-border-radius: 14px;
                                             -o-border-radius: 14px;
-                                            .patter_img{
-                                                margin-bottom: 3px;
-                                                img{
-                                                    border-radius: 14px;
-                                                    margin-bottom: 5px;
-                                                    -webkit-border-radius: 14px;
-                                                    -moz-border-radius: 14px;
-                                                    -ms-border-radius: 14px;
-                                                    -o-border-radius: 14px;
+                                            button{
+                                                border: 1px solid transparent;
+                                                background: transparent;
+                                                .patter_img{
+                                                    margin-bottom: 3px;
+                                                    img{
+                                                        border-radius: 14px;
+                                                        margin-bottom: 5px;
+                                                        -webkit-border-radius: 14px;
+                                                        -moz-border-radius: 14px;
+                                                        -ms-border-radius: 14px;
+                                                        -o-border-radius: 14px;
+                                                    }
                                                 }
-                                            }
-                                            .pattern_btn{
-                                                ul{
-                                                    li{
-                                                        .btn{
-                                                            padding: 2px 20px;
-                                                            i{
-                                                                color: #fff;
-                                                                font-size: 14px;
-                                                                line-height: 1;
+                                                .pattern_btn{
+                                                    ul{
+                                                        li{
+                                                            .btn{
+                                                                padding: 2px 19px;
+                                                                i{
+                                                                    color: #fff;
+                                                                    font-size: 14px;
+                                                                    line-height: 1;
+                                                                }
+                                                            }
+                                                            .bg_red{
+                                                                background: rgb(207, 47, 47);
+                                                                border-bottom-left-radius: 12px;
+                                                            }
+                                                            .bg_blue{
+                                                                background: #13033f;
+                                                                border-bottom-right-radius: 12px;
                                                             }
                                                         }
-                                                        .bg_red{
-                                                            background: rgb(207, 47, 47);
-                                                            border-bottom-left-radius: 12px;
-                                                        }
-                                                        .bg_blue{
-                                                            background: #13033f;
-                                                            border-bottom-right-radius: 12px;
-                                                        }
                                                     }
+                                                }
+                                                &:hover{
+                                                    border: 1px solid #007bff;
                                                 }
                                             }
                                         }
@@ -903,39 +1036,47 @@ outline:0;
                         -moz-border-radius: 14px;
                         -ms-border-radius: 14px;
                         -o-border-radius: 14px;
-                        .patter_img{
-                            margin-bottom: 3px;
-                            img{
-                                border-radius: 14px;
-                                margin-bottom: 5px;
-                                -webkit-border-radius: 14px;
-                                -moz-border-radius: 14px;
-                                -ms-border-radius: 14px;
-                                -o-border-radius: 14px;
+                        button{
+                            border: 1px solid transparent;
+                            background: transparent;
+                            .patter_img{
+                                margin-bottom: 3px;
+                                img{
+                                    border-radius: 14px;
+                                    margin-bottom: 5px;
+                                    -webkit-border-radius: 14px;
+                                    -moz-border-radius: 14px;
+                                    -ms-border-radius: 14px;
+                                    -o-border-radius: 14px;
+                                }
                             }
-                        }
-                        .pattern_btn{
-                            ul{
-                                li{
-                                    .btn{
-                                        padding: 2px 21px;
-                                        i{
-                                            color: #fff;
-                                            font-size: 14px;
-                                            line-height: 1;
+                            .pattern_btn{
+                                ul{
+                                    li{
+                                        .btn{
+                                            padding: 2px 21px;
+                                            i{
+                                                color: #fff;
+                                                font-size: 14px;
+                                                line-height: 1;
+                                            }
                                         }
-                                    }
-                                    .bg_red{
-                                        background: rgb(207, 47, 47);
-                                        border-bottom-left-radius: 12px;
-                                    }
-                                    .bg_blue{
-                                        background: #13033f;
-                                        border-bottom-right-radius: 12px;
+                                        .bg_red{
+                                            background: rgb(207, 47, 47);
+                                            border-bottom-left-radius: 12px;
+                                        }
+                                        .bg_blue{
+                                            background: #13033f;
+                                            border-bottom-right-radius: 12px;
+                                        }
                                     }
                                 }
                             }
+                            &:hover{
+                                border: 1px solid #007bff;
+                            }
                         }
+
                     }
                 }
                 .modal-footer{
@@ -976,6 +1117,117 @@ outline:0;
                 }
             }
         }
+        .panel_accoridion_area{
+            #accordion{
+                .card{
+                    margin-bottom: 20px;
+                    border-radius: 15px;
+                    -webkit-border-radius: 15px;
+                    -moz-border-radius: 15px;
+                    -ms-border-radius: 15px;
+                    -o-border-radius: 15px;
+                     .card-header{
+                        background: #fff;
+                        border-bottom: 1px solid transparent;
+
+                        h5{
+                            button{
+                                width: 100%;
+                                color: #000;
+                                text-transform: capitalize;
+                                font-size: 16px;
+                                line-height: 1.5;
+                                text-decoration: none;
+                                position: relative;
+                                i{
+                                    margin-left: 10px;
+                                    font-size: 14px;
+                                }
+                                &::after {
+                                    float: right;
+                                    font-family: "Font Awesome 5 Free";
+                                    font-style: normal;
+                                    font-weight: 600;
+                                    text-decoration: inherit;
+                                    content: "\f054"; //fa-chevron-up
+
+                                  }
+                              
+                                  //panel collapsed
+                                  &.collapsed {
+                                    &::after {
+                                      content: '\f078'; //fa-chevron-down
+                                    }
+                                  }
+                            }
+                        }
+                    }
+                    .card-body{
+                        .panel_titel{
+                            p{
+                                font-size: 14px;
+                                line-height: 1.5;
+                                text-transform: capitalize;
+                                color: #000;
+                                margin-bottom: 0;
+                                margin-top: 15px;
+                                font-weight: 500;
+                            }
+                        }
+                        .canves_ctn{
+                            p{
+                                font-size: 14px;
+                                line-height: 27px;
+                                text-transform: capitalize;
+                                color: #000;
+                                margin-bottom: 0;
+                                a{
+                                    color: #000;
+                                    padding: 0;
+                                    i{
+                                        padding: 5px 6px;
+                                        background: #ccc;
+                                        border-radius: 50%;
+                                        -webkit-border-radius: 50%;
+                                        -moz-border-radius: 50%;
+                                        -ms-border-radius: 50%;
+                                        width: 30px;
+                                        height: 30px;
+                                        line-height: 1.5;
+                                        font-size: 14px;
+                                    
+                                    }
+                                }
+                            }
+                        }
+                        .remove_btn_area{
+                            margin-top: 10px;
+                            .remove_btn{
+                                font-size: 12px;
+                                text-transform: capitalize;
+                                line-height: 1.5;
+                                color: #000;
+                                background: transparent;
+                                padding: 4px 12px;
+                                border-radius: 15px;
+                                -webkit-border-radius: 15px;
+                                -moz-border-radius: 15px;
+                                -ms-border-radius: 15px;
+                                text-decoration: none;
+                                i{
+                                    margin-right: 10px;
+                                }
+                                &:hover{
+                                    color: rgb(228, 86, 86);
+                                    background: #dddada;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         .right_footer_area{
             background: #000;
             border-radius: 0 20px 20px 0px;
@@ -993,6 +1245,9 @@ outline:0;
                     text-transform: capitalize;
                     a{
                         color: #fff;
+                        font-size: 16px;
+                        line-height: 1.5;
+                        text-transform: capitalize;
                         &:hover{
                             color: #007bff;
                         }
@@ -1144,6 +1399,9 @@ outline:0;
                           background: #ccc;
                           color: #007bff;
                       } 
+                      i{
+                          display: none;
+                      }
                 }  
             }
         }

@@ -26,7 +26,7 @@
 			<div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
 				<div class="single_panel_left bg_color page_1" id="step_1_left_content">
 						<div class="row">
-							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 px-0 px-sm-3">
 								<div class="top_left_btn">
 									<ul>
 										<li>
@@ -35,24 +35,24 @@
 												split panel
 												</button>
 												<div class="dropdown-menu drop_down_menu">
-													<a href="single_panel.html" class="dropdown-item" type="button" >single panel</a>
+													<a href="index.html" class="dropdown-item" type="button" >single panel</a>
 													<a href="multi_panel.html" class="dropdown-item" type="button" >multi panel</a>
 													<a href="split_panel.html" class="dropdown-item" type="button">split panel</a>
 												</div>
 											</div>
 										</li>
-										<li>
+										<li class="img_size_reduce">
 											<img src="assets/image/icon/layout.png" alt="teamplats">
 											<span>Teamplets</span>
 										</li>
 									</ul>
 								</div>
 							</div>
-							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 px-1 px-sm-3">
 								<div class="top_right_icon text-right">
 									<ul>
-										<li><img src="assets/image/icon/expand.png" alt="Expand image"></li>
-										<li><img src="assets/image/icon/rotate.png" alt="rotate img"></li>
+										<li onclick="img_zoom_effect()" class="img_size_reduce"><img src="assets/image/icon/expand.png" alt="Expand image"></li>
+										<li  class="img_size_reduce"><button id="rotateImg" type="button"><img src="assets/image/icon/rotate.png"  alt="rotate img"></button></li>
 										<li>
 											<div class='switchboxCont'>
 												<input class='switch default' id='first' type='checkbox'>
@@ -64,7 +64,30 @@
 								</div>
 							</div>
 						</div>
-					<div class="view_image_area"></div>
+						<div class="view_image_area" id="view_image_area">
+							<img id="patternImg" src=""/>
+							<div class="block">
+								<div class="side" id="block_nth_1"></div>
+								<div class="side" id="block_nth_2"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+								<div class="bottom_left_ranger_slider ranger_slider">
+									<input type="range" min="1" max="1.3" value="1" step="0.1" id="zoomer" class="slider" oninput="deepdive()">
+								</div>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+								<div class="bottom_middle_ranger_slider ranger_slider">
+									<input type="range" min="-360" max="360" value="360" step="1" id="three_d_controler" class="slider" oninput="image_3d_move(this.value)">
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+								<div class="bottom_right_sign">
+									<a href="multi_panel.html"><i class="fas fa-plus"></i></a>
+								</div>
+							</div>
+						</div>
 				</div>
 			</div>
 			<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
@@ -106,17 +129,17 @@
 							<!-- Canves area start -->
 							<div class="canves_area">
 								<div class="row">
-									<div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+									<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5">
 										<div class="canves_name canves_ctn">
 											<p>Canves name</p>
 										</div>
 									</div>
-									<div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 px-1">
+									<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 px-1">
 										<div class="my_canves canves_ctn">
 											<p>My beautiful canves</p>
 										</div>
 									</div>
-									<div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12">
+									<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 px-0 px-sm-3 px-md-1 px-lg-3">
 										<div class="edit_canves canves_ctn">
 											<p><a href="#"><i class="fas fa-pen"></i></a></p>
 										</div>
@@ -158,143 +181,309 @@
 								</a>
 							</div>
 							<!-- Transform button area end -->
-							<!-- custom size area start -->
-							<div class="custom_size">
-								<div class="canves_name cu_size_titel canves_ctn text-center">
-									<p>Custom size</p>
-								</div>
-								<div class="row">
-									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
-										<div class="canves_name canves_ctn text-center">
-											<div class="btn-group drop_down_btn">
-												<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												width
-												</button>
-												<div class="dropdown-menu drop_down_menu">
-												<button class="dropdown-item" type="button">18"</button>
-												<button class="dropdown-item" type="button">19"</button>
-												<button class="dropdown-item" type="button">20"</button>
-												<button class="dropdown-item" type="button">21"</button>
-												<button class="dropdown-item" type="button">22"</button>
-												<button class="dropdown-item" type="button">23"</button>
-												<button class="dropdown-item" type="button">24"</button>
-												<button class="dropdown-item" type="button">25"</button>
-												<button class="dropdown-item" type="button">26"</button>
-												<button class="dropdown-item" type="button">27"</button>
-												<button class="dropdown-item" type="button">28"</button>
-												<button class="dropdown-item" type="button">29"</button>
+
+							<!-- Panel Accoridon area start -->
+							<div class="panel_accoridion_area">
+								<div id="accordion">
+									<div class="card">
+									  <div class="card-header" id="headingOne">
+										<h5 class="mb-0">
+										  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">First panel <i class="fas fa-pen"></i>
+										  </button>
+										</h5>
+									  </div>
+								  
+									  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-0 px-sm-3 px-lg-2 px-xl-3">
+													<div class="panel_titel">
+														<p>Dimensions</p>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-1 px-sm-3">
+													<div class="canves_name canves_ctn text-center">
+														<div class="btn-group drop_down_btn">
+															<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															width
+															</button>
+															<div class="dropdown-menu drop_down_menu">
+															<button class="dropdown-item" type="button">18"</button>
+															<button class="dropdown-item" type="button">19"</button>
+															<button class="dropdown-item" type="button">20"</button>
+															<button class="dropdown-item" type="button">21"</button>
+															<button class="dropdown-item" type="button">22"</button>
+															<button class="dropdown-item" type="button">23"</button>
+															<button class="dropdown-item" type="button">24"</button>
+															<button class="dropdown-item" type="button">25"</button>
+															<button class="dropdown-item" type="button">26"</button>
+															<button class="dropdown-item" type="button">27"</button>
+															<button class="dropdown-item" type="button">28"</button>
+															<button class="dropdown-item" type="button">29"</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-1 px-sm-3">
+													<div class="my_canves canves_ctn">
+														<div class="btn-group drop_down_btn">
+															<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															height
+															</button>
+															<div class="dropdown-menu drop_down_menu">
+																<button class="dropdown-item" type="button">18"</button>
+																<button class="dropdown-item" type="button">19"</button>
+																<button class="dropdown-item" type="button">20"</button>
+																<button class="dropdown-item" type="button">21"</button>
+																<button class="dropdown-item" type="button">22"</button>
+																<button class="dropdown-item" type="button">23"</button>
+																<button class="dropdown-item" type="button">24"</button>
+																<button class="dropdown-item" type="button">25"</button>
+																<button class="dropdown-item" type="button">26"</button>
+																<button class="dropdown-item" type="button">27"</button>
+																<button class="dropdown-item" type="button">28"</button>
+																<button class="dropdown-item" type="button">29"</button>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
+											<!-- Remove button area start -->
+											<div class="remove_btn_area text-right">
+												<a href="#" class="remove_btn">
+													<i class="far fa-trash-alt"></i>
+													<span>remove</span>
+												</a>
+											</div>
+											<!-- Remove button area end -->
 										</div>
+									  </div>
 									</div>
-									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
-										<div class="my_canves canves_ctn">
-											<div class="btn-group drop_down_btn">
-												<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												height
-												</button>
-												<div class="dropdown-menu drop_down_menu">
-													<button class="dropdown-item" type="button">18"</button>
-													<button class="dropdown-item" type="button">19"</button>
-													<button class="dropdown-item" type="button">20"</button>
-													<button class="dropdown-item" type="button">21"</button>
-													<button class="dropdown-item" type="button">22"</button>
-													<button class="dropdown-item" type="button">23"</button>
-													<button class="dropdown-item" type="button">24"</button>
-													<button class="dropdown-item" type="button">25"</button>
-													<button class="dropdown-item" type="button">26"</button>
-													<button class="dropdown-item" type="button">27"</button>
-													<button class="dropdown-item" type="button">28"</button>
-													<button class="dropdown-item" type="button">29"</button>
+									<div class="card">
+									  <div class="card-header" id="headingTwo">
+										<h5 class="mb-0">
+										  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+											middle panel <i class="fas fa-pen"></i>
+										  </button>
+										</h5>
+									  </div>
+									  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-0 px-sm-3 px-lg-2 px-xl-3">
+													<div class="panel_titel">
+														<p>Dimensions</p>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-1 px-sm-3">
+													<div class="canves_name canves_ctn text-center">
+														<div class="btn-group drop_down_btn">
+															<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															width
+															</button>
+															<div class="dropdown-menu drop_down_menu">
+															<button class="dropdown-item" type="button">18"</button>
+															<button class="dropdown-item" type="button">19"</button>
+															<button class="dropdown-item" type="button">20"</button>
+															<button class="dropdown-item" type="button">21"</button>
+															<button class="dropdown-item" type="button">22"</button>
+															<button class="dropdown-item" type="button">23"</button>
+															<button class="dropdown-item" type="button">24"</button>
+															<button class="dropdown-item" type="button">25"</button>
+															<button class="dropdown-item" type="button">26"</button>
+															<button class="dropdown-item" type="button">27"</button>
+															<button class="dropdown-item" type="button">28"</button>
+															<button class="dropdown-item" type="button">29"</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-1 px-sm-3">
+													<div class="my_canves canves_ctn">
+														<div class="btn-group drop_down_btn">
+															<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															height
+															</button>
+															<div class="dropdown-menu drop_down_menu">
+																<button class="dropdown-item" type="button">18"</button>
+																<button class="dropdown-item" type="button">19"</button>
+																<button class="dropdown-item" type="button">20"</button>
+																<button class="dropdown-item" type="button">21"</button>
+																<button class="dropdown-item" type="button">22"</button>
+																<button class="dropdown-item" type="button">23"</button>
+																<button class="dropdown-item" type="button">24"</button>
+																<button class="dropdown-item" type="button">25"</button>
+																<button class="dropdown-item" type="button">26"</button>
+																<button class="dropdown-item" type="button">27"</button>
+																<button class="dropdown-item" type="button">28"</button>
+																<button class="dropdown-item" type="button">29"</button>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
+											<!-- Remove button area start -->
+											<div class="remove_btn_area text-right">
+												<a href="#" class="remove_btn">
+													<i class="far fa-trash-alt"></i>
+													<span>remove</span>
+												</a>
+											</div>
+											<!-- Remove button area end -->
 										</div>
+									  </div>
 									</div>
+									<div class="card">
+									  <div class="card-header" id="headingThree">
+										<h5 class="mb-0">
+										  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+											third panel <i class="fas fa-pen"></i>
+										  </button>
+										</h5>
+									  </div>
+									  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-0 px-sm-3 px-lg-2 px-xl-3">
+													<div class="panel_titel">
+														<p>Dimensions</p>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-1 px-sm-3">
+													<div class="canves_name canves_ctn text-center">
+														<div class="btn-group drop_down_btn">
+															<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															width
+															</button>
+															<div class="dropdown-menu drop_down_menu">
+															<button class="dropdown-item" type="button">18"</button>
+															<button class="dropdown-item" type="button">19"</button>
+															<button class="dropdown-item" type="button">20"</button>
+															<button class="dropdown-item" type="button">21"</button>
+															<button class="dropdown-item" type="button">22"</button>
+															<button class="dropdown-item" type="button">23"</button>
+															<button class="dropdown-item" type="button">24"</button>
+															<button class="dropdown-item" type="button">25"</button>
+															<button class="dropdown-item" type="button">26"</button>
+															<button class="dropdown-item" type="button">27"</button>
+															<button class="dropdown-item" type="button">28"</button>
+															<button class="dropdown-item" type="button">29"</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-1 px-sm-3">
+													<div class="my_canves canves_ctn">
+														<div class="btn-group drop_down_btn">
+															<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															height
+															</button>
+															<div class="dropdown-menu drop_down_menu">
+																<button class="dropdown-item" type="button">18"</button>
+																<button class="dropdown-item" type="button">19"</button>
+																<button class="dropdown-item" type="button">20"</button>
+																<button class="dropdown-item" type="button">21"</button>
+																<button class="dropdown-item" type="button">22"</button>
+																<button class="dropdown-item" type="button">23"</button>
+																<button class="dropdown-item" type="button">24"</button>
+																<button class="dropdown-item" type="button">25"</button>
+																<button class="dropdown-item" type="button">26"</button>
+																<button class="dropdown-item" type="button">27"</button>
+																<button class="dropdown-item" type="button">28"</button>
+																<button class="dropdown-item" type="button">29"</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- Remove button area start -->
+											<div class="remove_btn_area text-right">
+												<a href="#" class="remove_btn">
+													<i class="far fa-trash-alt"></i>
+													<span>remove</span>
+												</a>
+											</div>
+											<!-- Remove button area end -->
+										</div>
+									  </div>
+									</div>
+									<div class="card">
+										<div class="card-header" id="headingfour">
+										  <h5 class="mb-0">
+											<button class="btn btn-link" data-toggle="collapse" data-target="#collapsefour" aria-expanded="true" aria-controls="collapsefour">fourth panel <i class="fas fa-pen"></i>
+											</button>
+										  </h5>
+										</div>
+									
+										<div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
+										  <div class="card-body">
+											<div class="row">
+												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-0 px-sm-3 px-lg-2 px-xl-3">
+													<div class="panel_titel">
+														<p>Dimensions</p>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-1 px-sm-3">
+													<div class="canves_name canves_ctn text-center">
+														<div class="btn-group drop_down_btn">
+															<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															width
+															</button>
+															<div class="dropdown-menu drop_down_menu">
+															<button class="dropdown-item" type="button">18"</button>
+															<button class="dropdown-item" type="button">19"</button>
+															<button class="dropdown-item" type="button">20"</button>
+															<button class="dropdown-item" type="button">21"</button>
+															<button class="dropdown-item" type="button">22"</button>
+															<button class="dropdown-item" type="button">23"</button>
+															<button class="dropdown-item" type="button">24"</button>
+															<button class="dropdown-item" type="button">25"</button>
+															<button class="dropdown-item" type="button">26"</button>
+															<button class="dropdown-item" type="button">27"</button>
+															<button class="dropdown-item" type="button">28"</button>
+															<button class="dropdown-item" type="button">29"</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-1 px-sm-3">
+													<div class="my_canves canves_ctn">
+														<div class="btn-group drop_down_btn">
+															<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															height
+															</button>
+															<div class="dropdown-menu drop_down_menu">
+																<button class="dropdown-item" type="button">18"</button>
+																<button class="dropdown-item" type="button">19"</button>
+																<button class="dropdown-item" type="button">20"</button>
+																<button class="dropdown-item" type="button">21"</button>
+																<button class="dropdown-item" type="button">22"</button>
+																<button class="dropdown-item" type="button">23"</button>
+																<button class="dropdown-item" type="button">24"</button>
+																<button class="dropdown-item" type="button">25"</button>
+																<button class="dropdown-item" type="button">26"</button>
+																<button class="dropdown-item" type="button">27"</button>
+																<button class="dropdown-item" type="button">28"</button>
+																<button class="dropdown-item" type="button">29"</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											  <!-- Remove button area start -->
+												<div class="remove_btn_area text-right">
+													<a href="#" class="remove_btn">
+														<i class="far fa-trash-alt"></i>
+														<span>remove</span>
+													</a>
+												</div>
+											<!-- Remove button area end -->
+										  </div>
+										</div>
+									  </div>
 								</div>
 							</div>
-							<!-- Custom size area end -->
-							<!-- Photo shape area start -->
-							<div class="photo_shape_area">
-								<div class="row">
-									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-									   <div class="table_titel">
-										   <p>portrait</p>
-									   </div>
-									</div>
-									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-										<div class="table_titel">
-											<p>square</p>
-										</div>
-									 </div>
-									 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-										<div class="table_titel">
-											<p>landscape</p>
-										</div>
-									 </div>
-								</div>
-								<div class="shape_table">
-									<table class="table table-hover">
-										<tbody>
-										  <tr>
-											<td>12" * 16"</td>
-											<td></td>
-											<td>$19.99</td>
-										  </tr>
-										  <tr>
-											<td>18" * 24"</td>
-											<td></td>
-											<td>$29.99</td>
-										  </tr>
-										  <tr>
-											<td>24" * 32"</td>
-											<td></td>
-											<td>$39.99</td>
-										  </tr>
-										  <tr>
-											<td>32" * 40"</td>
-											<td></td>
-											<td>$49.99</td>
-										  </tr>
-										  <tr>
-											<td>40" * 48"</td>
-											<td></td>
-											<td>$59.99</td>
-										  </tr>
-										  <tr>
-											<td>48" * 52"</td>
-											<td></td>
-											<td>$69.99</td>
-										  </tr>
-										  <tr>
-											<td>52" * 64"</td>
-											<td></td>
-											<td>$79.99</td>
-										  </tr>
-										  <tr>
-											<td>64" * 72"</td>
-											<td></td>
-											<td>$89.99</td>
-										  </tr>
-										  <tr>
-											<td>24" * 32"</td>
-											<td></td>
-											<td>$39.99</td>
-										  </tr>
-										  <tr>
-											<td>24" * 32"</td>
-											<td></td>
-											<td>$39.99</td>
-										  </tr>
-										  <tr>
-											<td>24" * 32"</td>
-											<td></td>
-											<td>$39.99</td>
-										  </tr>
-										</tbody>
-									  </table>
-								</div>
-							</div>
-							<!-- Photo upload area end -->
+							<!-- Panel Accoridon area end -->
 						</div>
 						<div class="right_top_section" id="step_3_right_content">
 							<!-- Step contol button area start -->
@@ -309,7 +498,7 @@
 							<!-- Edge Style area start -->
 							<div class="edge_style_button_area">
 								<div class="row">
-									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
 										<div class="edge_styl_button_box text-center">
 											<div class="style_icon">
 												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
@@ -343,7 +532,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
 										<div class="edge_styl_button_box text-center">
 											<div class="style_icon">
 												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
@@ -371,262 +560,302 @@
 															<div class="row">
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img" id="patternBtn">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img" id="patternBtn_2">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
-																		<div class="patter_img">
-																			<img src="assets/image/pattern/pattern.png" alt="pattern">
-																		</div>
-																		<div class="pattern_btn">
-																			<ul>
-																				<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
-																				<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
-																			</ul>
-																		</div>
+																		<button>
+																			<div class="patter_img">
+																				<img src="assets/image/pattern/pattern.png" alt="pattern">
+																			</div>
+																			<div class="pattern_btn">
+																				<ul>
+																					<li><a href="#" class="btn bg_red"><i class="fas fa-pen-fancy"></i></a></li>
+																					<li><a href="#" class="btn bg_blue"><i class="fas fa-pen-fancy"></i></a></li>
+																				</ul>
+																			</div>
+																		</button>
 																	</div>
 																</div>
 															</div>
@@ -650,10 +879,10 @@
 										</div>
 										<div class="edge_styl_button_box text-center">
 											<div class="style_icon">
-												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
+												<input type="color" id="solidColor" placeholder="Solid Color"/>
 											</div>
 											<div class="style_titel">
-												<button type="button" class="btn modal_btn">solid color</button>
+												<span>solid color</span>
 											</div>
 										</div>
 									</div>
@@ -668,7 +897,7 @@
 										<p class="common_txt_style">$ 26.99</p>
 									</div>
 								</div>
-								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-0 px-sm-3">
 									<div class="footer_ctn">
 										<p><a href="#" type="button" class="btn modal_btn" data-toggle="modal" data-target="#check_details">check details</a></p>
 										<div class="modal fade" id="check_details" tabindex="-1" role="dialog" aria-labelledby="check_detailsTitle" aria-hidden="true">
@@ -775,7 +1004,7 @@
 								</div>
 								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
 									<div class="footer_ctn footer_btn">
-										<p><a href="#" class="btn common_btn">Add to cart</a></p>
+										<p><a href="#" class="btn common_btn"><span>Add to cart</span> <i class="fas fa-cart-plus"></i></a></p>
 									</div>
 								</div>
 							</div>
@@ -795,5 +1024,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <!--=== Custom JS ===-->
     <script src="assets/js/custom.js"></script>
+	<script src="assets/js/main.js"></script>
 </body>
 </html>
