@@ -404,22 +404,22 @@ outline:0;
             }
         }
         .bottom_left_ranger_slider{
-            position: fixed;
-            bottom: 34px;
+            position: relative;
+            bottom: -47px;
             .slider{
                 width: 60%;
             }
         }
         .bottom_middle_ranger_slider{
-            position: fixed;
-            bottom: 34px;
+            position: relative;
+            bottom: -47px;
             .slider{
                 width: 90%;
             }
         }
         .bottom_right_sign{
-            position: fixed;
-            bottom: 34px;
+            position: relative;
+            bottom: -47px;
             text-align: right;
             a{
                 i{

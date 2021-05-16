@@ -430,8 +430,8 @@ input.switch + label:before, input.switch + label:after {
 }
 
 .single_panel_area .single_panel_left .bottom_left_ranger_slider {
-  position: fixed;
-  bottom: 34px;
+  position: relative;
+  bottom: -47px;
 }
 
 .single_panel_area .single_panel_left .bottom_left_ranger_slider .slider {
@@ -439,8 +439,8 @@ input.switch + label:before, input.switch + label:after {
 }
 
 .single_panel_area .single_panel_left .bottom_middle_ranger_slider {
-  position: fixed;
-  bottom: 34px;
+  position: relative;
+  bottom: -47px;
 }
 
 .single_panel_area .single_panel_left .bottom_middle_ranger_slider .slider {
@@ -448,8 +448,8 @@ input.switch + label:before, input.switch + label:after {
 }
 
 .single_panel_area .single_panel_left .bottom_right_sign {
-  position: fixed;
-  bottom: 34px;
+  position: relative;
+  bottom: -47px;
   text-align: right;
 }
 
