@@ -52,7 +52,7 @@
 							<div class="top_right_icon text-right">
 								<ul>
 									<li onclick="img_zoom_effect()" class="img_size_reduce"><img src="assets/image/icon/expand.png" alt="Expand image"></li>
-									<li  class="img_size_reduce"><button id="rotateImg" type="button"><img src="assets/image/icon/rotate.png"  alt="rotate img"></button></li>
+									<li  onclick="image_rotate_effect()" class="img_size_reduce"><button id="rotateImg" type="button"><img src="assets/image/icon/rotate.png"  alt="rotate img"></button></li>
 									<li>
 										<div class='switchboxCont'>
 											<input class='switch default' id='first' type='checkbox'>
@@ -64,11 +64,33 @@
 							</div>
 						</div>
 					</div>
-					<div class="view_image_area" id="view_image_area">
-						<img id="patternImg" src=""/>
-						<div class="block">
-							<div class="side" id="block_nth_1"></div>
-							<div class="side" id="block_nth_2"></div>
+					<div class="row">
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-1">
+							<div class="view_image_area multi_view_image_area" id="view_image_area">
+								<img id="patternImg" src=""/>
+								<div class="block">
+									<div class="side" id="block_nth_1"></div>
+									<div class="side" id="block_nth_2"></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-1">
+							<div class="view_image_area multi_view_image_area" id="view_image_area">
+								<img id="patternImg" src=""/>
+								<div class="block">
+									<div class="side" id="block_nth_1"></div>
+									<div class="side" id="block_nth_2"></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-1">
+							<div class="view_image_area multi_view_image_area" id="view_image_area">
+								<img id="patternImg" src=""/>
+								<div class="block">
+									<div class="side" id="block_nth_1"></div>
+									<div class="side" id="block_nth_2"></div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -79,7 +101,7 @@
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
 							<div class="bottom_middle_ranger_slider ranger_slider">
-								<input type="range" min="-360" max="360" value="360" step="1" id="three_d_controler" class="slider" oninput="image_3d_move(this.value)">
+								<input type="range" min="-180" max="180" value="-180" step="1" id="three_d_controler" class="slider" oninput="image_3d_move(this.value)">
 							</div>
 						</div>
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
@@ -146,7 +168,11 @@
 												<div class="modal-dialog" role="document">
 												  <div class="modal-content">
 													<div class="modal-header">
-													  <h5 class="modal-title" id="check_detailsTitle">Canves name <i class="fas fa-pen"></i></h5>
+													  <h5 class="modal-title">
+														  <span id="check_detailsTitle">Canves name</span> 
+														  <span class="edit_icon_btn">
+														<i class="fas fa-pen" onclick="canves_edit_titel()"></i></span>
+													</h5>
 													  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 														<span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
 													  </button>
@@ -157,7 +183,7 @@
 																<p>Select Photo</p>
 															</div>
 															<div class="select_photo">
-																<input type="text" placeholder="select photo" class="form-control">
+																<input placeholder="select photo" class="form-control" type="file"  accept="image/*" name="image" id="imgLoad">
 																<div class="photo_icon">
 																	<i class="fas fa-camera"></i>
 																</div>
@@ -169,12 +195,12 @@
 															</div>
 															<div class="photo_size_edit">
 																<div class="btn-group drop_down_btn">
-																	<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<button type="button" id="widthText" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 																	width
 																	</button>
 																	<div class="dropdown-menu drop_down_menu">
-																	<button class="dropdown-item" type="button">18"</button>
-																	<button class="dropdown-item" type="button">19"</button>
+																	<button class="dropdown-item widthImg" type="button" value="18">18"</button>
+																	<button class="dropdown-item widthImg" type="button" value="190">190"</button>
 																	<button class="dropdown-item" type="button">20"</button>
 																	<button class="dropdown-item" type="button">21"</button>
 																	<button class="dropdown-item" type="button">22"</button>
@@ -190,12 +216,12 @@
 															</div>
 															<div class="photo_size_edit">
 																<div class="btn-group drop_down_btn">
-																	<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<button type="button" class="btn common_btn dropdown-toggle" id="heightText" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 																	height
 																	</button>
 																	<div class="dropdown-menu drop_down_menu">
-																	<button class="dropdown-item" type="button">18"</button>
-																	<button class="dropdown-item" type="button">19"</button>
+																	<button class="dropdown-item heightImg" type="button" value="18">18"</button>
+																	<button class="dropdown-item heightImg" type="button" value="190">190"</button>
 																	<button class="dropdown-item" type="button">20"</button>
 																	<button class="dropdown-item" type="button">21"</button>
 																	<button class="dropdown-item" type="button">22"</button>
@@ -226,13 +252,13 @@
 																	<button class="dropdown-item" type="button">Black <i class="fas fa-info-circle"></i></button>
 																	<button class="dropdown-item" type="button">photo wrap <i class="fas fa-info-circle"></i></button>
 																	<button class="dropdown-item" type="button">Stretch <i class="fas fa-info-circle"></i></button>
-																	<button class="dropdown-item" type="button">pattern <i class="fas fa-info-circle"></i></button>
+																	<button class="dropdown-item" onclick="pattern_box_collaps()" type="button">pattern <i class="fas fa-info-circle"></i></button>
 																	<button class="dropdown-item" type="button">solid color <i class="fas fa-info-circle"></i></button>
 																	</div>
 																</div>
 															</div>
 														</div>
-														<div class="canves_info_edit bg_color">
+														<div class="canves_info_edit bg_color" id="select_edit_pattern">
 															<div class="titel">
 																<p>Select Pattern</p>
 															</div>
@@ -585,13 +611,16 @@
 							</div>
 							<!-- Canves area end -->
 							<!-- Photo upload area start -->
+							<!-- NEW CANVES ADD AREA START -->
+							<div class="new_canves_add"></div>
+							<!-- NEW CANVES ADD AREA END -->
 							<div class="photo_upload_area">
 								<div class="area_titel">
 									<h3>Uploads your photos</h3>
 								</div>
 								<div class="photo_upload_box">
 									<div class="upload_btn_box">
-										<input type="file"  accept="image/*" name="image" id="imgLoad" style="display: none"  >
+										<input type="file"  accept="image/*" name="image" id="imgLoad" style="display: none">
 										<label  class="upload_btn" for="imgLoad" style="cursor: pointer;"><i class="fas fa-plus"></i></label>
 									</div>
 								</div>
@@ -628,12 +657,12 @@
 									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
 										<div class="canves_name canves_ctn text-center">
 											<div class="btn-group drop_down_btn">
-												<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<button type="button" id="widthText" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 												width
 												</button>
 												<div class="dropdown-menu drop_down_menu">
-												<button class="dropdown-item" type="button">18"</button>
-												<button class="dropdown-item" type="button">19"</button>
+												<button class="dropdown-item widthImg" type="button" value="18">18"</button>
+												<button class="dropdown-item widthImg" type="button" value="190">190"</button>
 												<button class="dropdown-item" type="button">20"</button>
 												<button class="dropdown-item" type="button">21"</button>
 												<button class="dropdown-item" type="button">22"</button>
@@ -651,12 +680,12 @@
 									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
 										<div class="my_canves canves_ctn">
 											<div class="btn-group drop_down_btn">
-												<button type="button" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<button type="button" id="heightText" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 												height
 												</button>
 												<div class="dropdown-menu drop_down_menu">
-													<button class="dropdown-item" type="button">18"</button>
-													<button class="dropdown-item" type="button">19"</button>
+													<button class="dropdown-item heightImg" type="button" value="18">18"</button>
+													<button class="dropdown-item heightImg" type="button" value="190">190"</button>
 													<button class="dropdown-item" type="button">20"</button>
 													<button class="dropdown-item" type="button">21"</button>
 													<button class="dropdown-item" type="button">22"</button>
@@ -776,7 +805,7 @@
 												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
 											</div>
 											<div class="style_titel">
-												<button type="button" class="btn modal_btn">mirror</button>
+												<button onclick="img_mirror_effect()" type="button" class="btn modal_btn">mirror</button>
 											</div>
 										</div>
 										<div class="edge_styl_button_box text-center">
@@ -784,7 +813,7 @@
 												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
 											</div>
 											<div class="style_titel">
-												<button type="button" class="btn modal_btn">photo wrap</button>
+												<button onclick="img_photo_wrap_effect()" type="button" class="btn modal_btn">photo wrap</button>
 											</div>
 										</div>
 										<div class="edge_styl_button_box text-center">
@@ -792,7 +821,7 @@
 												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
 											</div>
 											<div class="style_titel">
-												<button type="button" class="btn modal_btn">white</button>
+												<button onclick="img_white_effect()" type="button" class="btn modal_btn">white</button>
 											</div>
 										</div>
 										<div class="edge_styl_button_box text-center">
@@ -810,7 +839,7 @@
 												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
 											</div>
 											<div class="style_titel">
-												<button type="button" class="btn modal_btn">blur</button>
+												<button onclick="img_blur_effect()" type="button" class="btn modal_btn">blur</button>
 											</div>
 										</div>
 										<div class="edge_styl_button_box text-center">
@@ -846,9 +875,9 @@
 																	</div>
 																</div>
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
-																	<div class="pattern_box" id="patternBtn_2">
+																	<div class="pattern_box">
 																		<button>
-																			<div class="patter_img">
+																			<div class="patter_img" id="patternBtn_2">
 																				<img src="assets/image/pattern/pattern.png" alt="pattern">
 																			</div>
 																			<div class="pattern_btn">
@@ -1146,7 +1175,7 @@
 												<img class="image-fluid" src="assets/image/icon/image.png" alt="Mirror">
 											</div>
 											<div class="style_titel">
-												<button type="button" class="btn modal_btn">black</button>
+												<button onclick="img_black_effect()" type="button" class="btn modal_btn">black</button>
 											</div>
 										</div>
 										<div class="edge_styl_button_box text-center">

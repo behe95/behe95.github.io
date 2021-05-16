@@ -1,13 +1,4 @@
 // Image Uplaod
-
-// let loadImg=document.querySelector('#imgLoad');
-// loadImg.addEventListener('change',fileLoad);
-
-// function fileLoad(event){
-//     let outputImg=document.getElementById('output');
-//     outputImg.src=URL.createObjectURL(event.target.files[0]);
-// }
-
 let loadImg=document.querySelector('#imgLoad');
 loadImg.addEventListener('change',fileLoad);
 
@@ -42,22 +33,9 @@ function image_3d_move(value) {
 	document.getElementById('block_nth_2').style.transform="rotateY(" + value + "deg)";
 	document.getElementById('block_nth_1').style.transformStyle="preserve-3d";
 	document.getElementById('block_nth_2').style.transformStyle="preserve-3d";
-    document.getElementById('block_nth_1').style.transition="all 4s cubic-bezier(0.49, 0.01, 0.2, 0.99) 0s";
-	document.getElementById('block_nth_2').style.transition="all 4s cubic-bezier(0.49, 0.01, 0.2, 0.99) 0s";
     document.getElementById('block_nth_1').style.width="60%";
     document.getElementById('block_nth_2').style.width="6%";
   }
-
-// // rotates landscape and portland
-// let rotateChange=document.getElementById("rotateChange");
-// rotateChange.addEventListener('click',rotateChanges);
-// function rotateChanges(e){
-//     let val=e;
-//     console.log(val)
-//     let img3d=document.getElementById("output");
-//         img3d.classList.add('rotateChange');
-// }
-
 
 // width Image
 let widthImg=document.querySelectorAll(".widthImg");
@@ -74,8 +52,6 @@ function widthRange(e){
     img3d.style.width=width+"px";
 }
 }
-
-
 // height Image
 let heightImg=document.querySelectorAll(".heightImg");
 console.log(heightImg)
@@ -117,16 +93,6 @@ function img_photo_wrap_effect(){
     photo_wrap_left.classList.toggle("left");
 }
 // PHOTO WRAP FUNCTION END
-// ROTATE FUNCTION START
-// function img_rotate_effect(){
-//     let rotate_img = document.getElementById("output");
-//     if (rotate_img.style.transform === "rotate(0deg)"){
-//         rotate_img.style.transform = "rotate(-90deg)";
-//     }else{
-//         rotate_img.style.transform = "rotate(0deg)";
-//     }
-// }
-// ROTATE FUNCTION END
 
 // MIRROR FUNCTION START
 function img_mirror_effect(){
@@ -155,7 +121,6 @@ function img_blur_effect(){
 // BLUR FUNCTION END
 // BLACK FUNCTION START
 function img_black_effect(){
-    // let val=e.target.value;
     let black_img = document.getElementById("block_nth_2");
         black_img.style.background="black";
         document.getElementById("patternImg").style.visibility="hidden";
@@ -201,23 +166,46 @@ document.getElementById("solidColor").addEventListener('change',function(e){
  })
  
 //rotateChange
-
-document.getElementById("rotateImg").addEventListener('click',function(e){
+function image_rotate_effect(){
     var actualImage = new Image();
-actualImage.src = $('#block_nth_2').css('background-image').replace(/"/g,"").replace(/url\(|\)$/ig, "");
-
-actualImage.onload = function() {
-    widths = this.width;
-    heights = this.height;
-
-    wid(widths,heights)   
-}
-function wid(widths,heights){
-    console.log(widths);
-    console.log(heights);
+    actualImage.src = $('#block_nth_2').css('background-image').replace(/"/g,"").replace(/url\(|\)$/ig, "");
     
-let white_img = document.getElementById("block_nth_2");  
-white_img.style.height=widths+"px";
-white_img_2.style.width=heights+"px";
-} 
-})
+    actualImage.onload = function() {
+        widths = this.width;
+        heights = this.height;
+    
+        wid(widths,heights)   
+    }
+    function wid(widths,heights){
+        console.log(widths);
+        console.log(heights);
+        
+    let white_img = document.getElementById("block_nth_2");  
+    white_img.style.height=widths+"px";
+    white_img_2.style.width=heights+"px";
+    } 
+}
+
+// MULTI PANEL CANVES INFO EDIT SELECT PATTERN DIV COLLAPS START
+var pattern_select = document.getElementById("select_edit_pattern");
+pattern_select.style.display = "none";
+function pattern_box_collaps() {
+    if (pattern_select.style.display === "none") {
+        pattern_select.style.display = "flex";
+    } else {
+        pattern_select.style.display = "none";
+    }
+  }
+// MULTI PANEL CANVES INFO EDIT SELECT PATTERN DIV COLLAPS END
+// CANVES EDIT INFO:: EDIT CANVES TITEL JS START
+function canves_edit_titel() {
+    const titel =document.getElementById("check_detailsTitle").contentEditable = true;
+}
+// CANVES EDIT INFO:: EDIT CANVES TITEL JS END
+// CANVES EDIT INFO:: SAVE NEW CANVES JS START
+function canves_edit_titel() {
+    const titel =document.getElementById("check_detailsTitle");
+    document.getElementById("check_detailsTitle").contentEditable = true;
+    titel.classList.add('is_focused');
+}
+// CANVES EDIT INFO:: SAVE NEW CANVES JS END

@@ -259,10 +259,14 @@ outline:0;
             overflow: hidden;
             #patternImg{
                 width: 39px;
-                height: 100%;
+                // height: 100%;
+                // position: absolute;
+                // top: 0px;
+                // left: 54px;
+                height: 80%;
                 position: absolute;
-                top: 0px;
-                left: 54px;
+                top: 35px;
+                left: 56px;
                 transform: rotateY(-60deg) translateX(-100%);
                 -webkit-transform: rotateY(-60deg) translateX(-100%);
                 -moz-transform: rotateY(-60deg) translateX(-100%);
@@ -278,7 +282,7 @@ outline:0;
                 perspective: 1000px;
                 top: 8%;
                 left: 14%;
-                // overflow: hidden;
+                //overflow: hidden;
             }
         
             
@@ -286,8 +290,6 @@ outline:0;
                 position: absolute;
                 top: 0;
                 left: 0;
-                // background-image: url('https://picsum.photos/id/1025/1024/768');
-                // background-size: auto 100%;
                 box-shadow: -1vw .5vw 1vw rgba(223, 219, 219, 0.3);
                 background: #7e7b7b;
                 height: 350px;
@@ -318,7 +320,36 @@ outline:0;
             }
          
         }
-
+        .multi_view_image_area{
+            width: 100%;
+            padding-top: 76%;
+            margin:55px 0;
+            height: 400px;
+            .block{
+                left: 5%;
+                .side{
+                    width: 100%;
+                }
+                .main_1 {
+                    width: 90% !important;
+                }
+            }
+        }
+        .split_view_image_area{
+            width: 100%;
+            padding-top: 76%;
+            margin:55px 0;
+            height: 400px;
+            .block{
+                left: 5%;
+                .side{
+                    width: 100%;
+                }
+                .main_1 {
+                    width: 90% !important;
+                }
+            }
+        }
         .top_left_btn{
             ul{      
                 li{
@@ -373,11 +404,22 @@ outline:0;
             }
         }
         .bottom_left_ranger_slider{
+            position: fixed;
+            bottom: 34px;
             .slider{
                 width: 60%;
             }
         }
+        .bottom_middle_ranger_slider{
+            position: fixed;
+            bottom: 34px;
+            .slider{
+                width: 90%;
+            }
+        }
         .bottom_right_sign{
+            position: fixed;
+            bottom: 34px;
             text-align: right;
             a{
                 i{
@@ -638,6 +680,17 @@ outline:0;
                                 font-size: 16px;
                                 margin-left: 10px;
                             }
+                            .is_focused{
+                                border: 1px solid #7e7b7b;
+                                border-radius: 4px;
+                                -webkit-border-radius: 4px;
+                                -moz-border-radius: 4px;
+                                -ms-border-radius: 4px;
+                                &:focus-visible{
+                                    outline: none;
+                                  }
+                            }
+                              
                         }
                         .close {
                             padding: 1rem;
@@ -676,6 +729,9 @@ outline:0;
                                     &:focus{
                                         border: 1px dashed #000;
                                     }
+                                }
+                                .form-control {
+                                    font-size: 10px;
                                 }
                                 .photo_icon{
                                     position: absolute;
@@ -811,7 +867,9 @@ outline:0;
                                 }
                             }
                         }
-
+                        #select_edit_pattern{
+                            display: none;
+                        }
                     }
                     .modal-footer{
                         ul{

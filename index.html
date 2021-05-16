@@ -48,7 +48,7 @@
 							<div class="top_right_icon text-right">
 								<ul>
 									<li onclick="img_zoom_effect()" class="img_size_reduce"><img src="assets/image/icon/expand.png" alt="Expand image"></li>
-									<li  class="img_size_reduce"><button id="rotateImg" type="button"><img src="assets/image/icon/rotate.png"  alt="rotate img"></button></li>
+									<li  class="img_size_reduce" onclick="image_rotate_effect()"><button id="rotateImg" type="button"><img src="assets/image/icon/rotate.png"  alt="rotate img"></button></li>
 									<li>
 										<div class='switchboxCont'>
 											<input class='switch default' id='first' type='checkbox'>
@@ -75,7 +75,7 @@
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
 							<div class="bottom_middle_ranger_slider ranger_slider">
-								<input type="range" min="-360" max="360" value="360" step="1" id="three_d_controler" class="slider" oninput="image_3d_move(this.value)">
+								<input type="range" min="-180" max="180" value="-180" step="1" id="three_d_controler" class="slider" oninput="image_3d_move(this.value)">
 							</div>
 						</div>
 						<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
@@ -187,7 +187,7 @@
 									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
 										<div class="canves_name canves_ctn text-center">
 											<div class="btn-group drop_down_btn">
-												<button type="button"  id="widthText" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<button type="button" id="widthText" class="btn common_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 												width
 												</button>
 												<div class="dropdown-menu drop_down_menu">
@@ -210,7 +210,7 @@
 									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
 										<div class="my_canves canves_ctn">
 											<div class="btn-group drop_down_btn">
-												<button type="button" class="btn common_btn dropdown-toggle"  id="heightText" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<button type="button" class="btn common_btn dropdown-toggle" id="heightText" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 												height
 												</button>
 												<div class="dropdown-menu drop_down_menu">
@@ -392,7 +392,7 @@
 																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 px-2">
 																	<div class="pattern_box">
 																		<button>
-																			<div class="patter_img"  id="patternBtn">
+																			<div class="patter_img" id="patternBtn">
 																				<img src="assets/image/pattern/pattern.png" alt="pattern">
 																			</div>
 																			<div class="pattern_btn">
