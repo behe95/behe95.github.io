@@ -21,6 +21,54 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/custom.css">
+	<style>
+		.transformOnOff{
+			border: 5px dotted blue;
+		}
+		.cursorOnOff{
+			cursor: default !important;
+		}
+
+		.borderDiv1{
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			background: red;
+			border-radius: 100%;
+			left: 50%;
+			top: -8px;
+		}
+
+		.borderDiv2{
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			background: red;
+			border-radius: 100%;
+			left: 50%;
+			bottom: -8px;
+		}
+
+		.borderDiv3{
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			background: red;
+			border-radius: 100%;
+			right: -8px;
+			top: 50%;
+		}
+
+		.borderDiv4{
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			background: red;
+			border-radius: 100%;
+			left: -8px;
+			top: 50%;
+		}
+	</style>
 </head>
 <body>
 <!-- SINGLE PANEL AREA STEP 1 START -->
@@ -62,7 +110,7 @@
 					</div>
 					<div class="view_image_area" id="view_image_area">
 						<img id="patternImg" src=""/>
-						<div class="block" id="blook">
+						<div class="block" id="block">
 							<div class="side" id="block_nth_1"></div>
 							<div class="side" id="block_nth_2"></div>
 						</div>
@@ -172,7 +220,7 @@
 							<!-- Step contol button area start -->
 							<!-- Transform button area start -->
 							<div class="transform_btn_area text-right">
-								<a href="#" class="transform_btn">
+								<a href="#" class="transform_btn" id="transform_btn">
 									<img src="assets/image/icon/free-transform.png" alt="transform">
 									<span>transform</span>
 								</a>
@@ -856,5 +904,6 @@
     <!--=== Custom JS ===-->
 	<script src="assets/js/main.js"></script>
     <script src="assets/js/custom.js"></script>
+<script src="assets/js/canvas.js"></script>
 </body>
 </html>
