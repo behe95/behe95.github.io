@@ -266,7 +266,7 @@ input.switch + label:before, input.switch + label:after {
   position: relative;
   width: 80%;
   padding-top: 76%;
-  margin: 55px auto;
+  margin: 55px auto 16px;
   overflow: hidden;
 }
 
