@@ -25,3 +25,8 @@
 .widthSet{
     width: 100px !important;
 }
+
+
+.hide__component{
+    display: none;
+}

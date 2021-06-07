@@ -265,7 +265,10 @@ input.switch + label:before, input.switch + label:after {
 .single_panel_area .single_panel_left .view_image_area {
   position: relative;
   width: 80%;
-  padding-top: 76%;
+  /* padding-top: 76%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 55px auto 16px;
   overflow: hidden;
 }

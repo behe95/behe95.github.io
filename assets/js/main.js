@@ -1,211 +1,251 @@
-// Image Uplaod
-let loadImg=document.querySelector('#imgLoad');
-loadImg.addEventListener('change',fileLoad);
+//canvas
+const main__canvas = document.getElementById('main__canvas');
+const main__ctx = main__canvas.getContext('2d');
 
-function fileLoad(event){
-  var getImagePath = URL.createObjectURL(event.target.files[0]);
-  console.log(getImagePath);
-  $('.side').css('background-image', 'url(' + getImagePath + ')');
+const preview__image__canvas = document.getElementById('preview__image__canvas');
+const preveiw__image__context = preview__image__canvas.getContext('2d');
+
+//canvas edit btn
+const edit__canvas__btn = document.getElementById('edit__canvas__btn');
+let isEditCanvasName = false;
+edit__canvas__btn.addEventListener('click', handleEditCanvasBtn);
+
+const custom__canvas__name = document.getElementById('custom__canvas__name');
+const custom__canvas__name__input = document.getElementById('custom__canvas__name__input');
+custom__canvas__name__input.addEventListener('input', customCanvasNameInputChangeHandler);
+let custom__canvas__name__text = "";
+
+
+// //threejs variable
+// const scene = new THREE.Scene();
+// const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+// camera.position.z = 2;
+
+
+// const renderer = new THREE.WebGLRenderer();
+// renderer.setSize( window.innerWidth, window.innerHeight );
+// document.body.appendChild( renderer.domElement );
+
+// const geometry = new THREE.BoxGeometry();
+
+// const textureImage = 'https://s3.amazonaws.com/duhaime/blog/tsne-webgl/assets/cat.jpg'
+// const texture = new THREE.TextureLoader().load(textureImage)
+
+// const material = new THREE.MeshBasicMaterial( { map: texture} );
+
+
+// const cube = new THREE.Mesh( geometry, material );
+// scene.add( cube );
+
+
+
+
+
+//image upload
+const imgLoadInput = document.getElementById('imgLoad');
+imgLoadInput.addEventListener('input', imgLoadInputHandler);
+
+let singleImageFile = null;
+let singleImage = new Image();
+let singleImageFileReader = new FileReader();
+
+let isSingleImageLoaded = false;
+
+const cancelCanvasPhotoUploadBtn = document.getElementById('cancel__canvas__photo__upload');
+
+cancelCanvasPhotoUploadBtn.addEventListener('click', cancelCanvasPhotoUploadHandler);
+
+
+//canceling image
+function cancelCanvasPhotoUploadHandler() {
+    isSingleImageLoaded = false;
+    singleImageFile = null;
+    singleImage = new Image();
+    singleImageFileReader = new FileReader();
+
+
+
+    document.getElementById('photo__upload__area__components__holder').classList.remove('hide__component');
+    document.getElementById('preview__image__canvas__holder').classList.remove('d-flex');
+    document.getElementById('preview__image__canvas__holder').classList.remove('justify-content-between');
+    document.getElementById('preview__image__canvas__holder').classList.add('hide__component');
+}
+
+//image uploading
+function imgLoadInputHandler(e) {
+    singleImageFile = e.target.files[0];
+    singleImageFileReader.readAsDataURL(singleImageFile);
+
+    document.getElementById('photo__upload__area__components__holder').classList.add('hide__component');
+    document.getElementById('preview__image__canvas__holder').classList.remove('hide__component');
+    document.getElementById('preview__image__canvas__holder').classList.add('d-flex');
+    document.getElementById('preview__image__canvas__holder').classList.add('justify-content-between');
+    document.getElementById('preview__image__name').innerText = singleImageFile.name;
 
 }
-/// 3d view
 
-let threed=document.getElementById("first");
 
-threed.addEventListener('change',change3d);
 
-function change3d(e){
-    let val=e.target.value;
-    let img3d_1=document.getElementById("block_nth_1");
-    let img3d_2=document.getElementById("block_nth_2");
-    if (e.target.checked == true){
-        img3d_1.classList.add('main_1');
-        img3d_2.classList.add('left');
-    } else {
+//image rotation
 
-        img3d_1.classList.remove('main_1');
-        img3d_2.classList.remove('left');
+const rotateImgBtn = document.getElementById('rotateImg');
+rotateImgBtn.addEventListener('click', rotateImageHandler);
+
+let isRotateImage = false;
+let rotateDegree = 0;
+
+function rotateImageHandler() {
+    isRotateImage = true;
+    if (rotateDegree !== -360) {
+        return rotateDegree -= 90;
     }
-
+    rotateDegree = 0;
 }
-function image_3d_move(value) {
-	document.getElementById('block_nth_1').style.transform="rotateY(" + value + "deg)";
-	document.getElementById('block_nth_2').style.transform="rotateY(" + value + "deg)";
-	document.getElementById('block_nth_1').style.transformStyle="preserve-3d";
-	document.getElementById('block_nth_2').style.transformStyle="preserve-3d";
-    document.getElementById('block_nth_1').style.width="60%";
-    document.getElementById('block_nth_2').style.width="6%";
+
+function rotateImage(source,x,y,w,h,deg){
+    deg = deg>360?deg%360:(deg<0?360+(deg%360):deg);
+    
+    var rad = deg*Math.PI/180;
+    var _rad = (deg%90)*Math.PI/180;
+    
+    var i= {
+      w : w * Math.cos(_rad) + h * Math.sin(_rad),
+      h : w * Math.sin(_rad) + h * Math.cos(_rad)
+    };
+    if(((deg/90)|0)%2){
+      var t = i.w;
+      i.w = i.h;
+      i.h = t;
+    }
+    i.x = (i.w - w) / 2;
+    i.y = (i.h - h) / 2;
+    
+    // console.log('i',i);
+    
+    var cvs = document.createElement('canvas');
+    var ctx = cvs.getContext("2d");
+    
+    cvs.width = i.w;
+    cvs.height = i.h;
+    ctx.translate(i.w/2, i.h/2);
+    ctx.rotate(rad);
+    ctx.drawImage(source,x,y,w,h,-i.w/2+i.x,-i.h/2+i.y,w,h);
+    return cvs;
   }
 
-// width Image
-let widthImg=document.querySelectorAll(".widthImg");
-console.log(widthImg)
-for (let i = 0; i < widthImg.length; i++) {
-    widthImg[i].addEventListener('click',widthRange);
-function widthRange(e){
-    let val=e.target.value;
-    console.log(val)
-    let widthtext=document.getElementById("widthText")
-    widthtext.textContent=val;
-    let img3d=document.getElementById("view_image_area");
-    let width=val*1;// 1 inchis=96 px
-    img3d.style.width=width+"px";
-}
-}
-// height Image
-let heightImg=document.querySelectorAll(".heightImg");
-console.log(heightImg)
-for (let i = 0; i < heightImg.length; i++) {
-    heightImg[i].addEventListener('click',heightRange);
-    function heightRange(e){
-        let val=e.target.value;
-        console.log(val)
-        let heightText=document.getElementById("heightText")
-        heightText.textContent=val;
-        let img3d=document.getElementById("output");
-        let width=val*1;// 1 inchis=96 px
-        img3d.style.height=width+"px";
-    }
-}
-// ZOOM FUNCTION START
-function img_zoom_effect(){
-    var zoomer_back = document.getElementById('zoomer');
-    let zoom_img = document.getElementById("view_image_area");
-        zoom_img.style.transform = "scale(1)";
-        zoomer_back.value="0";
-}
-// ZOOM WITH RANGER SLIDER START
-var zoomer = document.getElementById('zoomer');
-var hubblepic = document.getElementById('view_image_area');
 
-function deepdive(){ 
-    zoomlevel = zoomer.valueAsNumber;
-    hubblepic.style.webkitTransform = "scale("+zoomlevel+")";
-    hubblepic.style.transform = "scale("+zoomlevel+")";
-}
-// ZOOM WITH RANGER SLIDER END
-// ZOOM FUNCTION END
-// PHOTO WRAP FUNCTION START
-function img_photo_wrap_effect(){
-    let photo_wrap_main = document.getElementById("block_nth_1");
-    let photo_wrap_left = document.getElementById("block_nth_2");
-    photo_wrap_main.classList.toggle("main_1");
-    photo_wrap_left.classList.toggle("left");
-}
-// PHOTO WRAP FUNCTION END
 
-// MIRROR FUNCTION START
-function img_mirror_effect(){
-    let mirror_img = document.getElementById("block_nth_1");
-    let mirror_img_2 = document.getElementById("block_nth_2");
-    if(mirror_img.style.transform=== "scaleY(1)"){
-        mirror_img.style.transform="scaleY(-1)";
-        mirror_img_2.style.transform="scaleY(-1)";
+
+// zoom controller
+const zoomSlider = document.getElementById('zoomer');
+let zoomScaleValue = 1;
+
+zoomSlider.addEventListener('input', zoomHandler);
+
+function zoomHandler(e) {
+    zoomScaleValue = e.target.value;
+}
+
+//reset zoom
+const resetZoomBtn = document.getElementById('reset__zoom');
+resetZoomBtn.addEventListener('click', (e) => zoomScaleValue = 1);
+
+//3d rotate around Y axis with perspective
+const threeDControlerSlider = document.getElementById('three_d_controler');
+
+threeDControlerSlider.addEventListener('input', threeDControlerHandler);
+
+function threeDControlerHandler(e) {
+    console.log(e.target.value);
+    // cube.rotation.y += e.target.value/10
+}
+
+
+
+  //drawing image on canvas 
+function drawImageScaled(img, ctx) {
+    let canvas = ctx.canvas ;
+   let hRatio = canvas.width  / img.width    ;
+   let vRatio =  canvas.height / img.height  ;
+   let ratio  = Math.min ( hRatio, vRatio );
+   let centerShift_x = ( canvas.width - img.width*ratio ) / 2;
+   let centerShift_y = ( canvas.height - img.height*ratio ) / 2;  
+   ctx.clearRect(0,0,canvas.width, canvas.height);
+
+   //zoom controlling
+   ctx.transform(zoomScaleValue,0,0,zoomScaleValue,-(zoomScaleValue-1)*canvas.width/2,-(zoomScaleValue-1)*canvas.height/2)
+
+
+//    const angle1 = 3 * Math.PI/180;
+//     const angle2 = 3 * Math.PI/180;
+
+//     var cs = Math.cos(angle1), sn = Math.sin(angle1);
+//     var h = Math.cos(angle2);
+//     var a = 100*cs, b = -100*sn, c = 200;
+//     var d = h*100*sn, e = h*100*cs, f = 200;
+//     main__ctx.setTransform(a, d, b, e, c, f);
+
+   //draw image on context
+   ctx.drawImage(img, 0,0, img.width, img.height,
+                      centerShift_x,centerShift_y,img.width*ratio, img.height*ratio); 
+    preveiw__image__context.clearRect(0,0,preview__image__canvas.width, preview__image__canvas.height);
+    preveiw__image__context.drawImage(img, 0,0, img.width, img.height,
+        centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);
+
+    //rotate image and draw
+    // if(isRotateImage){
+        let rotated = rotateImage(canvas,0,0,canvas.width,canvas.height,rotateDegree);
+        canvas.width  = rotated.width ;
+        canvas.height = rotated.height;
+        ctx.drawImage(rotated,0,0,rotated.width,rotated.height,0,0,rotated.width,rotated.height);
+    // }
+
+    // cube.rotation.y += 0.01;
+
+    
+
+}
+
+
+
+
+
+function handleEditCanvasBtn(e){
+    isEditCanvasName = !isEditCanvasName;
+    if (isEditCanvasName) {
+        custom__canvas__name.classList.add('hide__component');
+        custom__canvas__name__input.classList.remove('hide__component');
+        custom__canvas__name__input.focus();
     }else{
-        mirror_img.style.transform="scaleY(1)";
-        mirror_img_2.style.transform="scaleY(1)";
+        custom__canvas__name.classList.remove('hide__component');
+        custom__canvas__name__input.classList.add('hide__component');
     }
 
-}
-// MIRROR FUNCTION END
-
-// BLUR FUNCTION START
-function img_blur_effect(){
-    let blur_img = document.getElementById("block_nth_2");
-    if (blur_img.style.filter === "blur(0px)"){
-        blur_img.style.filter = "blur(6px)";
-    }else{
-        blur_img.style.filter= "blur(0px)";
-    }
-}
-// BLUR FUNCTION END
-// BLACK FUNCTION START
-function img_black_effect(){
-    let black_img = document.getElementById("block_nth_2");
-        black_img.style.background="black";
-        document.getElementById("patternImg").style.visibility="hidden";
-
+    custom__canvas__name.innerText = custom__canvas__name__text ? custom__canvas__name__text : 'My beautiful canves';
 }
 
-// BLACK FUNCTION END
-// WHITE FUNCTION START
-function img_white_effect(){
-    let white_img = document.getElementById("block_nth_2");
-        white_img.style.background = "white";
-        white_img.style.filter = "brightness(100%)";
-        document.getElementById("patternImg").style.visibility="hidden";
-}
-// WHITE FUNCTION END
-// PATTERN IMAGE FUNCTION START
-document.getElementById("patternBtn").addEventListener('click',function(e){
-    let val=this.children[0];
-    val=val.getAttribute('src');
-    document.getElementById("patternImg").setAttribute('src',val);
-    document.getElementById("patternImg").style.visibility="visible";
-    document.getElementById("block_nth_2").style.background="transparent";
-    console.log(val)
-    })
-
-    document.getElementById("patternBtn_2").addEventListener('click',function(e){
-        let val=this.children[0];
-        val=val.getAttribute('src');
-        document.getElementById("patternImg").setAttribute('src',val);
-        document.getElementById("patternImg").style.visibility="visible";
-        console.log(val)
-        })
-
-// PATTERN IMAGE FUNCTION END
-//solid Color
-document.getElementById("solidColor").addEventListener('change',function(e){
-    let colorVal=e.target.value;
-    let white_img = document.getElementById("block_nth_2");
-    console.log(colorVal)
-    white_img.style.background = colorVal;
-    white_img.style.filter = "brightness(100%)";
-    
- })
- 
-//rotateChange
-function image_rotate_effect(){
-    var actualImage = new Image();
-    actualImage.src = $('#block_nth_2').css('background-image').replace(/"/g,"").replace(/url\(|\)$/ig, "");
-    
-    actualImage.onload = function() {
-        widths = this.width;
-        heights = this.height;
-    
-        wid(widths,heights)   
-    }
-    function wid(widths,heights){
-        console.log(widths);
-        console.log(heights);
-        
-    let white_img = document.getElementById("block_nth_2");  
-    white_img.style.height=widths+"px";
-    white_img_2.style.width=heights+"px";
-    } 
+function customCanvasNameInputChangeHandler(e) {
+    custom__canvas__name__text = e.target.value;
 }
 
-// MULTI PANEL CANVES INFO EDIT SELECT PATTERN DIV COLLAPS START
-var pattern_select = document.getElementById("select_edit_pattern");
-pattern_select.style.display = "none";
-function pattern_box_collaps() {
-    if (pattern_select.style.display === "none") {
-        pattern_select.style.display = "flex";
-    } else {
-        pattern_select.style.display = "none";
-    }
-  }
-// MULTI PANEL CANVES INFO EDIT SELECT PATTERN DIV COLLAPS END
-// CANVES EDIT INFO:: EDIT CANVES TITEL JS START
-function canves_edit_titel() {
-    const titel =document.getElementById("check_detailsTitle").contentEditable = true;
-}
-// CANVES EDIT INFO:: EDIT CANVES TITEL JS END
-// CANVES EDIT INFO:: SAVE NEW CANVES JS START
-function canves_edit_titel() {
-    const titel =document.getElementById("check_detailsTitle");
-    document.getElementById("check_detailsTitle").contentEditable = true;
-    titel.classList.add('is_focused');
-}
-// CANVES EDIT INFO:: SAVE NEW CANVES JS END
+
+//animate infinite loop
+function animate() {
+    requestAnimationFrame(animate);
+    // console.log('hey');
+    // if(singleImageFile) {
+        singleImageFileReader.onload = function () {
+            singleImage.src = singleImageFileReader.result;
+            // singleImage.onload = function () {
+            //     isSingleImageLoaded = true;
+            // };        
+        }
+    // }
+    // if (isSingleImageLoaded) {
+        drawImageScaled(singleImage, main__ctx)
+    // }
+
+    // renderer.render( scene, camera );
+};
+
+animate();

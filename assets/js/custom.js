@@ -1,5 +1,9 @@
 (function($){
     "use strict";
+    let currentStepNum = $('#checkout-progress').data('current-step');
+    if (currentStepNum == 1) {
+        $('.prev_cn_btn').addClass('disabled');
+    }
 // RIGHT SIDE PROGRESS BAR JS START
     $('.nxt_cntl_btn').on('click', function() {
 
@@ -12,9 +16,9 @@
         if(currentStepNum == 3) {
             return false;
         }
-        if(nextStepNum == 3){
-            $(this).addClass('disabled');
-        }
+        // if(nextStepNum == 3){
+        //     $(this).addClass('disabled');
+        // }
         $('.checkout-progress').removeClass('.step-' + currentStepNum).addClass('.step-' + (currentStepNum + 1));
         
         currentStep.removeClass('active').addClass('valid');
@@ -32,12 +36,16 @@
         var prevStep = $('.step.step-' + prevStepNum);
         var progressBar = $('#checkout-progress');
         $('.nxt_cntl_btn').removeClass('disabled');
+
+        if (prevStepNum == 1) {
+            $('.prev_cn_btn').addClass('disabled');
+        }
         if(currentStepNum == 1) {
             return false;
         }
-        if(prevStepNum == 1){
-            $(this).addClass('disabled');
-        }
+        // if(prevStepNum == 1){
+        //     $(this).addClass('disabled');
+        // }
         $('.checkout-progress').removeClass('.step-' + currentStepNum).addClass('.step-' + (prevStepNum));
         
         currentStep.removeClass('active');
@@ -64,5 +72,6 @@
         $('#step_1_right_content,#step_3_right_content').hide();
     });
 // STEP CONTROLL JS END
+
 
 })(jQuery);
