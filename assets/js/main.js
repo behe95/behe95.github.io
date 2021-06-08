@@ -1,3 +1,10 @@
+// html2canvas(document.body, {
+//     onrendered: function (canvas) {
+//         document.body.appendChild(canvas)
+//     },
+//     scale: 5
+// })
+
 //canvas
 const main__canvas = document.getElementById('main__canvas');
 const main__ctx = main__canvas.getContext('2d');
@@ -16,27 +23,46 @@ custom__canvas__name__input.addEventListener('input', customCanvasNameInputChang
 let custom__canvas__name__text = "";
 
 
-// //threejs variable
-// const scene = new THREE.Scene();
-// const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-// camera.position.z = 2;
+//3d init
+let camera, scene, renderer, geometry, texture, mesh;
+const main__canvas__holder = document.getElementById('main__canvas__holder');
 
+let width = main__canvas__holder.offsetWidth;
+let height = main__canvas__holder.offsetHeight;
 
-// const renderer = new THREE.WebGLRenderer();
-// renderer.setSize( window.innerWidth, window.innerHeight );
-// document.body.appendChild( renderer.domElement );
+let radians = 10 * Math.PI / 180
+// let size = 350;
 
-// const geometry = new THREE.BoxGeometry();
+function init3d() {
+    // renderer = new THREE.WebGLRenderer();
+    renderer = new THREE.WebGLRenderer( { antialias: true,
+        preserveDrawingBuffer: true,
+        alpha:true} ); 
+    // renderer.setClearColor( 0x000000, 0 );
+    renderer.setClearColor( 0xf9f8f8, 1 );
 
-// const textureImage = 'https://s3.amazonaws.com/duhaime/blog/tsne-webgl/assets/cat.jpg'
-// const texture = new THREE.TextureLoader().load(textureImage)
+    renderer.setSize(width, height);
+    // document.getElementById('main__canvas__holder').appendChild(renderer.domElement);
+    renderer.setPixelRatio( window.devicePixelRatio );
+    
+  scene = new THREE.Scene();
+  
+    camera = new THREE.PerspectiveCamera(70, width / height, 1, 1000);
+    camera.position.z = 400;
+    scene.add(camera);
 
-// const material = new THREE.MeshBasicMaterial( { map: texture} );
+    texture = new THREE.Texture(main__canvas);
 
+    texture.generateMipmaps = false;
+    texture.minFilter = THREE.LinearFilter;
 
-// const cube = new THREE.Mesh( geometry, material );
-// scene.add( cube );
+    var material = new THREE.MeshBasicMaterial({ map: texture });
+    geometry = new THREE.BoxGeometry( 350, 350, 50 );
+    mesh = new THREE.Mesh( geometry, material );
+    scene.add( mesh );
 
+    // main__canvas.width = main__canvas.height = size;
+}
 
 
 
@@ -87,12 +113,27 @@ function imgLoadInputHandler(e) {
 
 
 //image rotation
-
+const threeDSwitch = document.getElementById('first');
+threeDSwitch.addEventListener('input', threeDSwitchHandler);
+let isThreeDEnabled = false;
 const rotateImgBtn = document.getElementById('rotateImg');
 rotateImgBtn.addEventListener('click', rotateImageHandler);
 
 let isRotateImage = false;
 let rotateDegree = 0;
+
+function threeDSwitchHandler(e) {
+    if (e.target.checked){
+        document.getElementById('main__canvas').hidden = true;
+        document.getElementById('main__canvas__holder').appendChild(renderer.domElement);
+
+        return isThreeDEnabled = true;
+    }
+    document.getElementById('main__canvas__holder').removeChild(renderer.domElement);
+    document.getElementById('main__canvas').hidden = false;
+
+    isThreeDEnabled = false;
+}
 
 function rotateImageHandler() {
     isRotateImage = true;
@@ -157,7 +198,7 @@ threeDControlerSlider.addEventListener('input', threeDControlerHandler);
 
 function threeDControlerHandler(e) {
     console.log(e.target.value);
-    // cube.rotation.y += e.target.value/10
+    radians = e.target.value * Math.PI / 180
 }
 
 
@@ -171,6 +212,12 @@ function drawImageScaled(img, ctx) {
    let centerShift_x = ( canvas.width - img.width*ratio ) / 2;
    let centerShift_y = ( canvas.height - img.height*ratio ) / 2;  
    ctx.clearRect(0,0,canvas.width, canvas.height);
+
+   //blurr background
+    main__ctx.shadowBlur = 5;
+    main__ctx.shadowColor = "#000000";
+    main__ctx.fillStyle = "#ffffff";
+    main__ctx.fillRect(0, 0, img.width, img.height);
 
    //zoom controlling
    ctx.transform(zoomScaleValue,0,0,zoomScaleValue,-(zoomScaleValue-1)*canvas.width/2,-(zoomScaleValue-1)*canvas.height/2)
@@ -202,6 +249,7 @@ function drawImageScaled(img, ctx) {
 
     // cube.rotation.y += 0.01;
 
+    
     
 
 }
@@ -245,7 +293,12 @@ function animate() {
         drawImageScaled(singleImage, main__ctx)
     // }
 
-    // renderer.render( scene, camera );
+    texture.needsUpdate = true;
+    // mesh.rotation.y += 0.01;
+    mesh.rotation.y = radians;
+    renderer.render(scene, camera);
+
 };
 
+init3d();
 animate();
